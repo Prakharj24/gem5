@@ -470,17 +470,26 @@ class DRAMCtrl : public AbstractMemory
 
     };
 
+
+    // void changeTurn();
+    // EventWrapper<DRAMCtrl,&DRAMCtrl::changeTurn> nextTurn;
+    //
     /**
      * Bunch of things requires to setup "events" in gem5
      * When event "respondEvent" occurs for example, the method
      * processRespondEvent is called; no parameters are allowed
      * in these methods
      */
+
+
     void processNextReqEvent();
     EventWrapper<DRAMCtrl,&DRAMCtrl::processNextReqEvent> nextReqEvent;
 
     void processRespondEvent();
     EventWrapper<DRAMCtrl, &DRAMCtrl::processRespondEvent> respondEvent;
+
+
+    bool inBankGroup(DRAMPacket * dram_pkt, int subTurn);
 
     /**
      * Check if the read queue has room for more entries
@@ -662,6 +671,13 @@ class DRAMCtrl : public AbstractMemory
      * Vector of ranks
      */
     std::vector<Rank*> ranks;
+
+    //  variable corresponding to BTA
+    int turn;
+    int subTurn;
+    static const Tick RAS_period = 18750;
+    Tick act_diff_stat;
+
 
     /**
      * The following are basic design parameters of the memory

@@ -90,7 +90,8 @@ DRAMCtrl::DRAMCtrl(const DRAMCtrlParams* p) :
     frontendLatency(p->static_frontend_latency),
     backendLatency(p->static_backend_latency),
     busBusyUntil(0), prevArrival(0),
-    nextReqTime(0), activeRank(0), timeStampOffset(0)
+    nextReqTime(0), activeRank(0), timeStampOffset(0),
+    turn(0), subTurn(0), act_diff_stat(0)
 {
     // sanity check the ranks since we rely on bit slicing for the
     // address decoding
@@ -755,42 +756,73 @@ DRAMCtrl::processRespondEvent()
 bool
 DRAMCtrl::chooseNext(std::deque<DRAMPacket*>& queue, bool switched_cmd_type)
 {
-    // This method does the arbitration between requests. The chosen
-    // packet is simply moved to the head of the queue. The other
-    // methods know that this is the place to look. For example, with
-    // FCFS, this method does nothing
+    // This method implements bank triple alteration policy
+    // with fixed periodic RAS
     assert(!queue.empty());
-
-    // bool to indicate if a packet to an available rank is found
+    // inform("turn: %d", turn);
+    // BTA
     bool found_packet = false;
-    if (queue.size() == 1) {
-        DRAMPacket* dram_pkt = queue.front();
-        // available rank corresponds to state refresh idle
-        if (ranks[dram_pkt->rank]->isAvailable()) {
-            found_packet = true;
-            DPRINTF(DRAM, "Single request, going to a free rank\n");
-        } else {
-            DPRINTF(DRAM, "Single request, going to a busy rank\n");
-        }
-        return found_packet;
-    }
+    for(auto i = queue.begin(); i != queue.end(); ++i){
+        DRAMPacket* dram_pkt = *i;
+            if (ranks[dram_pkt->rank]->isAvailable() &&
+                        dram_pkt->pkt->req->hasContextId() &&
+                        dram_pkt->pkt->req->contextId() == turn &&
+                        inBankGroup(dram_pkt, subTurn)){
 
-    if (memSchedPolicy == Enums::fcfs) {
-        // check if there is a packet going to a free rank
-        for(auto i = queue.begin(); i != queue.end() ; ++i) {
-            DRAMPacket* dram_pkt = *i;
-            if (ranks[dram_pkt->rank]->isAvailable()) {
                 queue.erase(i);
                 queue.push_front(dram_pkt);
                 found_packet = true;
                 break;
             }
+    }
+    // change turn after every request selection
+    if(turn < 7)
+        turn++;
+    else{
+        turn = 0;
+        if(subTurn < 3)
+            subTurn++;
+        else
+            subTurn = 0;
         }
-    } else if (memSchedPolicy == Enums::frfcfs) {
-        found_packet = reorderQueue(queue, switched_cmd_type);
-    } else
-        panic("No scheduling policy chosen\n");
+
     return found_packet;
+}
+
+bool
+DRAMCtrl::inBankGroup(DRAMPacket * dram_pkt, int subTurn){
+    int core = dram_pkt->pkt->req->contextId();
+    int bank = dram_pkt->bank;
+    if(core == 0 || core == 3 || core == 6){
+        if(subTurn == 0 &&( bank == 0 || bank == 3 || bank == 6))
+            return true;
+        else if(subTurn == 1 &&( bank == 2 || bank == 5))
+            return true;
+        else if(subTurn == 2 &&( bank == 1 || bank == 4 || bank == 7))
+            return true;
+        else
+        return false;
+    }
+    if(core == 1 || core == 4 || core == 7){
+        if(subTurn == 0 &&( bank == 1 || bank == 4 || bank == 7))
+            return true;
+        else if(subTurn == 1 &&( bank == 0 || bank == 3 || bank == 6))
+            return true;
+        else if(subTurn == 2 &&( bank == 2 || bank == 5))
+            return true;
+        else
+        return false;
+    }
+    if(core == 2 || core == 5) {
+        if(subTurn == 0 &&( bank == 2 || bank == 2))
+            return true;
+        else if(subTurn == 1 &&( bank == 1 || bank == 4 || bank == 7))
+            return true;
+        else if(subTurn == 2 &&( bank == 0 || bank == 3 || bank == 6))
+            return true;
+        else
+        return false;
+    }
 }
 
 bool
@@ -1059,23 +1091,23 @@ DRAMCtrl::doDRAMAccess(DRAMPacket* dram_pkt)
     // get the bank
     Bank& bank = dram_pkt->bankRef;
 
-    // for the state we need to track if it is a row hit or not
-    bool row_hit = true;
-
-    // respect any constraints on the command (e.g. tRCD or tCCD)
-    Tick cmd_at = std::max(bank.colAllowedAt, curTick());
-
-    // Determine the access latency and update the bank state
-    if (bank.openRow == dram_pkt->row) {
-        // nothing to do
-    } else {
-        row_hit = false;
-
-        // If there is a page open, precharge it.
-        if (bank.openRow != Bank::NO_ROW) {
-            prechargeBank(rank, bank, std::max(bank.preAllowedAt, curTick()));
-        }
-
+    // // for the state we need to track if it is a row hit or not
+    // bool row_hit = true;
+    //
+    // // respect any constraints on the command (e.g. tRCD or tCCD)
+    // Tick cmd_at = std::max(bank.colAllowedAt, curTick());
+    //
+    // // Determine the access latency and update the bank state
+    // if (bank.openRow == dram_pkt->row) {
+    //     // nothing to do
+    // } else {
+    //     row_hit = false;
+    //
+    //     // If there is a page open, precharge it.
+    //     if (bank.openRow != Bank::NO_ROW) {
+    //         prechargeBank(rank, bank, std::max(bank.preAllowedAt, curTick()));
+    //     }
+    //
         // next we need to account for the delay in activating the
         // page
         Tick act_tick = std::max(bank.actAllowedAt, curTick());
@@ -1083,10 +1115,16 @@ DRAMCtrl::doDRAMAccess(DRAMPacket* dram_pkt)
         // Record the activation and deal with all the global timing
         // constraints caused be a new activation (tRRD and tXAW)
         activateBank(rank, bank, act_tick, dram_pkt->row);
+        act_diff_stat = act_tick - act_diff_stat;
+        inform("Activate @ %d and RAS: %d", act_tick, act_diff_stat);
+        if(act_diff_stat!= 18750)
+            inform("something is wrong!");
+        act_diff_stat = act_tick;
+
 
         // issue the command as early as possible
-        cmd_at = bank.colAllowedAt;
-    }
+        Tick cmd_at = std::max(bank.colAllowedAt, curTick());
+    // }
 
     // we need to wait until the bus is available before we can issue
     // the command
@@ -1142,75 +1180,80 @@ DRAMCtrl::doDRAMAccess(DRAMPacket* dram_pkt)
                                  dram_pkt->isRead ? cmd_at + tRTP :
                                  dram_pkt->readyTime + tWR);
 
-    // increment the bytes accessed and the accesses per row
-    bank.bytesAccessed += burstSize;
-    ++bank.rowAccesses;
+    // close page policy
+    int pretime = std::max(curTick(), bank.preAllowedAt);
+    prechargeBank(rank, bank, pretime);
+    // inform("precharge @ %d", pretime);
 
-    // if we reached the max, then issue with an auto-precharge
-    bool auto_precharge = pageMgmt == Enums::close ||
-        bank.rowAccesses == maxAccessesPerRow;
-
-    // if we did not hit the limit, we might still want to
-    // auto-precharge
-    if (!auto_precharge &&
-        (pageMgmt == Enums::open_adaptive ||
-         pageMgmt == Enums::close_adaptive)) {
-        // a twist on the open and close page policies:
-        // 1) open_adaptive page policy does not blindly keep the
-        // page open, but close it if there are no row hits, and there
-        // are bank conflicts in the queue
-        // 2) close_adaptive page policy does not blindly close the
-        // page, but closes it only if there are no row hits in the queue.
-        // In this case, only force an auto precharge when there
-        // are no same page hits in the queue
-        bool got_more_hits = false;
-        bool got_bank_conflict = false;
-
-        // either look at the read queue or write queue
-        const deque<DRAMPacket*>& queue = dram_pkt->isRead ? readQueue :
-            writeQueue;
-        auto p = queue.begin();
-        // make sure we are not considering the packet that we are
-        // currently dealing with (which is the head of the queue)
-        ++p;
-
-        // keep on looking until we have found required condition or
-        // reached the end
-        while (!(got_more_hits &&
-                 (got_bank_conflict || pageMgmt == Enums::close_adaptive)) &&
-               p != queue.end()) {
-            bool same_rank_bank = (dram_pkt->rank == (*p)->rank) &&
-                (dram_pkt->bank == (*p)->bank);
-            bool same_row = dram_pkt->row == (*p)->row;
-            got_more_hits |= same_rank_bank && same_row;
-            got_bank_conflict |= same_rank_bank && !same_row;
-            ++p;
-        }
-
-        // auto pre-charge when either
-        // 1) open_adaptive policy, we have not got any more hits, and
-        //    have a bank conflict
-        // 2) close_adaptive policy and we have not got any more hits
-        auto_precharge = !got_more_hits &&
-            (got_bank_conflict || pageMgmt == Enums::close_adaptive);
-    }
-
+    // // increment the bytes accessed and the accesses per row
+    // bank.bytesAccessed += burstSize;
+    // ++bank.rowAccesses;
+    //
+    // // if we reached the max, then issue with an auto-precharge
+    // bool auto_precharge = pageMgmt == Enums::close ||
+    //     bank.rowAccesses == maxAccessesPerRow;
+    //
+    // // if we did not hit the limit, we might still want to
+    // // auto-precharge
+    // if (!auto_precharge &&
+    //     (pageMgmt == Enums::open_adaptive ||
+    //      pageMgmt == Enums::close_adaptive)) {
+    //     // a twist on the open and close page policies:
+    //     // 1) open_adaptive page policy does not blindly keep the
+    //     // page open, but close it if there are no row hits, and there
+    //     // are bank conflicts in the queue
+    //     // 2) close_adaptive page policy does not blindly close the
+    //     // page, but closes it only if there are no row hits in the queue.
+    //     // In this case, only force an auto precharge when there
+    //     // are no same page hits in the queue
+    //     bool got_more_hits = false;
+    //     bool got_bank_conflict = false;
+    //
+    //     // either look at the read queue or write queue
+    //     const deque<DRAMPacket*>& queue = dram_pkt->isRead ? readQueue :
+    //         writeQueue;
+    //     auto p = queue.begin();
+    //     // make sure we are not considering the packet that we are
+    //     // currently dealing with (which is the head of the queue)
+    //     ++p;
+    //
+    //     // keep on looking until we have found required condition or
+    //     // reached the end
+    //     while (!(got_more_hits &&
+    //              (got_bank_conflict || pageMgmt == Enums::close_adaptive)) &&
+    //            p != queue.end()) {
+    //         bool same_rank_bank = (dram_pkt->rank == (*p)->rank) &&
+    //             (dram_pkt->bank == (*p)->bank);
+    //         bool same_row = dram_pkt->row == (*p)->row;
+    //         got_more_hits |= same_rank_bank && same_row;
+    //         got_bank_conflict |= same_rank_bank && !same_row;
+    //         ++p;
+    //     }
+    //
+    //     // auto pre-charge when either
+    //     // 1) open_adaptive policy, we have not got any more hits, and
+    //     //    have a bank conflict
+    //     // 2) close_adaptive policy and we have not got any more hits
+    //     auto_precharge = !got_more_hits &&
+    //         (got_bank_conflict || pageMgmt == Enums::close_adaptive);
+    // }
+    //
     // DRAMPower trace command to be written
     std::string mem_cmd = dram_pkt->isRead ? "RD" : "WR";
-
+    //
     // MemCommand required for DRAMPower library
     MemCommand::cmds command = (mem_cmd == "RD") ? MemCommand::RD :
                                                    MemCommand::WR;
 
-    // if this access should use auto-precharge, then we are
-    // closing the row
-    if (auto_precharge) {
-        // if auto-precharge push a PRE command at the correct tick to the
-        // list used by DRAMPower library to calculate power
-        prechargeBank(rank, bank, std::max(curTick(), bank.preAllowedAt));
-
-        DPRINTF(DRAM, "Auto-precharged bank: %d\n", dram_pkt->bankId);
-    }
+    // // if this access should use auto-precharge, then we are
+    // // closing the row
+    // if (auto_precharge) {
+    //     // if auto-precharge push a PRE command at the correct tick to the
+    //     // list used by DRAMPower library to calculate power
+    //     prechargeBank(rank, bank, std::max(curTick(), bank.preAllowedAt));
+    //
+    //     DPRINTF(DRAM, "Auto-precharged bank: %d\n", dram_pkt->bankId);
+    // }
 
     // Update bus state
     busBusyUntil = dram_pkt->readyTime;
@@ -1234,8 +1277,8 @@ DRAMCtrl::doDRAMAccess(DRAMPacket* dram_pkt)
     // Update the stats and schedule the next request
     if (dram_pkt->isRead) {
         ++readsThisTime;
-        if (row_hit)
-            readRowHits++;
+        // if (row_hit)
+        //     readRowHits++;
         bytesReadDRAM += burstSize;
         perBankRdBursts[dram_pkt->bankId]++;
 
@@ -1245,16 +1288,34 @@ DRAMCtrl::doDRAMAccess(DRAMPacket* dram_pkt)
         totQLat += cmd_at - dram_pkt->entryTime;
     } else {
         ++writesThisTime;
-        if (row_hit)
-            writeRowHits++;
+        // if (row_hit)
+        //     writeRowHits++;
         bytesWritten += burstSize;
         perBankWrBursts[dram_pkt->bankId]++;
     }
 }
 
+// void
+// DRAMCtrl::changeTurn(){
+//     if(turn < 2)
+//         turn++;
+//     else{
+//         turn = 0;
+//         if(subTurn < 3)
+//             subTurn++;
+//         else
+//             subTurn = 0;
+//     }
+// }
+
 void
 DRAMCtrl::processNextReqEvent()
 {
+    // schedule turn changing routine
+    // if(!nextTurn.scheduled()){
+    //     schedule(nextTurn, curTick() + RAS_period);
+    // }
+
     int busyRanks = 0;
     for (auto r : ranks) {
         if (!r->isAvailable()) {
@@ -1339,8 +1400,16 @@ DRAMCtrl::processNextReqEvent()
             // which are above the required threshold. However, to
             // avoid adding more complexity to the code, return and wait
             // for a refresh event to kick things into action again.
-            if (!found_read)
+            if (!found_read){
+                act_diff_stat = curTick() - act_diff_stat;
+                inform("Fake request @ %d and RAS: %d", curTick(), act_diff_stat);
+                if(act_diff_stat!= 18750)
+                    inform("something is wrong!");
+                act_diff_stat = curTick();
+
+                schedule(nextReqEvent, curTick() + RAS_period);
                 return;
+            }
 
             DRAMPacket* dram_pkt = readQueue.front();
             assert(dram_pkt->rankRef.isAvailable());
@@ -1397,8 +1466,15 @@ DRAMCtrl::processNextReqEvent()
         // There could be reads to the available ranks. However, to avoid
         // adding more complexity to the code, return at this point and wait
         // for a refresh event to kick things into action again.
-        if (!found_write)
+        if (!found_write){
+            act_diff_stat = curTick() - act_diff_stat;
+            inform("Fake request @ %d and diff: %d", curTick(), act_diff_stat);
+            if(act_diff_stat!= 18750)
+                inform("something is wrong!");
+            act_diff_stat = curTick();
+            schedule(nextReqEvent, curTick() + RAS_period);
             return;
+        }
 
         DRAMPacket* dram_pkt = writeQueue.front();
         assert(dram_pkt->rankRef.isAvailable());
@@ -1438,7 +1514,8 @@ DRAMCtrl::processNextReqEvent()
     // It is possible that a refresh to another rank kicks things back into
     // action before reaching this point.
     if (!nextReqEvent.scheduled())
-        schedule(nextReqEvent, std::max(nextReqTime, curTick()));
+        // schedule(nextReqEvent, std::max(nextReqTime, curTick()));
+        schedule(nextReqEvent, curTick() + RAS_period);
 
     // If there is space available and we have writes waiting then let
     // them retry. This is done here to ensure that the retry does not
