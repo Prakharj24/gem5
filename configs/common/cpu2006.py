@@ -31,7 +31,7 @@ import sys
 from os.path import basename, exists, join as joinpath, normpath
 from os.path import isdir, isfile, islink
 
-spec_dist = os.environ.get('M5_CPU2006', '/Users/PrakharJawre/SPEC2006_X86')
+spec_dist = os.environ.get('M5_CPU2006', '/home/prakhar/SPEC2006_X86')
 
 def copyfiles(srcdir, dstdir):
     from filecmp import cmp as filecmp
@@ -163,9 +163,9 @@ class Benchmark(object):
         if not isdir(cwd):
             os.makedirs(cwd)
         # copy input files to working directory
-#	cwd = '/Users/PrakharJawre/gem5-tournament'
-    	#cwd = '/Users/PrakharJawre/SPEC2006_X86/data/sphinx/all/input/'
-        #cwd = '/Users/PrakharJawre/m5-waysharing/input/'
+#	cwd = '/home/prakhar/gem5-tournament'
+    	#cwd = '/home/prakhar/SPEC2006_X86/data/sphinx/all/input/'
+        #cwd = '/home/prakhar/m5-waysharing/input/'
 	#print "cwd = %s " % (cwd)
         #for d in self.inputs_dir:
 	#    copyfiles(d, cwd)
@@ -193,11 +193,11 @@ class namd(DefaultBenchmark):
 
     def all(self, isa, os):
 	#self.args = ['--input','working_dir/namd.input',
-	self.args = ['--input','/Users/PrakharJawre/SPEC2006_X86/data/namd/all/input/namd.input',
+	self.args = ['--input','/home/prakhar/SPEC2006_X86/data/namd/all/input/namd.input',
 	  	     '--iterations', '1',
 		     '--output','namd.out']
     def ref(self, isa, os):
-	self.args = ['--input','/Users/PrakharJawre/SPEC2006_X86/data/namd/all/input/namd.input',
+	self.args = ['--input','/home/prakhar/SPEC2006_X86/data/namd/all/input/namd.input',
 	  	     '--iterations', '1',
 		     '--output','namd.out']
 
@@ -206,15 +206,15 @@ class milc(DefaultBenchmark):
     name = 'milc'
     lang = 'C'
     def ref(self, isa, os):
-        self.stdin = '/Users/PrakharJawre/SPEC2006_X86/data/milc/ref/input/su3imp.in'
+        self.stdin = '/home/prakhar/SPEC2006_X86/data/milc/ref/input/su3imp.in'
    
 
 class omnetpp(DefaultBenchmark):
      name = 'omnetpp'
      lang = 'C++'
      def all(self, isa, os):
-         self.args =  ['/Users/PrakharJawre/SPEC2006_X86/data/omnetpp/ref/input/omnetpp.ini',
-                     '/Users/PrakharJawre/SPEC2006_X86/data/omnetpp/ref/output/omnetpp.log']
+         self.args =  ['/home/prakhar/SPEC2006_X86/data/omnetpp/ref/input/omnetpp.ini',
+                     '/home/prakhar/SPEC2006_X86/data/omnetpp/ref/output/omnetpp.log']
 
 class cactusADM(DefaultBenchmark):
     name = 'cactusADM'
@@ -222,7 +222,7 @@ class cactusADM(DefaultBenchmark):
     lang = 'C++'
 
     def ref(self, isa, os):
-        self.args = ['/Users/PrakharJawre/SPEC2006_X86/data/cactusADM/ref/input/benchADM.par']
+        self.args = ['/home/prakhar/SPEC2006_X86/data/cactusADM/ref/input/benchADM.par']
 	self.output = 'benchADM.out'
 
 
@@ -231,15 +231,15 @@ class soplex(DefaultBenchmark):
     lang = 'C++'
 
     def test(self, isa, os):
-        self.args = ['-m10000','/Users/PrakharJawre/SPEC2006_X86/data/soplex/test/input/test.mps']
+        self.args = ['-m10000','/home/prakhar/SPEC2006_X86/data/soplex/test/input/test.mps']
         self.output = 'test.out'  
 
     def ref(self, isa, os):
-        self.args = ['-m3500','/Users/PrakharJawre/SPEC2006_X86/data/soplex/ref/input/ref.mps']
+        self.args = ['-m3500','/home/prakhar/SPEC2006_X86/data/soplex/ref/input/ref.mps']
         self.output = 'ref.out'  
 
     def train(self, isa, os):
-        self.args = ['-m1200','/Users/PrakharJawre/SPEC2006_X86/data/soplex/train/input/train.mps']
+        self.args = ['-m1200','/home/prakhar/SPEC2006_X86/data/soplex/train/input/train.mps']
         self.output = 'train.out'  
 
 class gamess(DefaultBenchmark):
@@ -248,7 +248,7 @@ class gamess(DefaultBenchmark):
     lang = 'F95'
 
     def ref(self, isa, os):
-     	self.stdin = '/Users/PrakharJawre/SPEC2006_X86/data/gamess/ref/input/cytosine.2.config'
+     	self.stdin = '/home/prakhar/SPEC2006_X86/data/gamess/ref/input/cytosine.2.config'
 
 class bzip2(DefaultBenchmark):
     name = 'bzip2'
@@ -256,16 +256,16 @@ class bzip2(DefaultBenchmark):
     lang = 'C'
 
     def all(self, isa, os):
-        self.args = ['/Users/PrakharJawre/SPEC2006_X86/data/bzip2/all/input/input.program', '1']
+        self.args = ['/home/prakhar/SPEC2006_X86/data/bzip2/all/input/input.program', '1']
 
     def test(self, isa, os):
-        self.args = [ '/Users/PrakharJawre/SPEC2006_X86/data/bzip2/test/input/dryer.jpg ','2']
+        self.args = [ '/home/prakhar/SPEC2006_X86/data/bzip2/test/input/dryer.jpg ','2']
 
     def train(self, isa, os):
-        self.args = [ '/Users/PrakharJawre/SPEC2006_X86/data/bzip2/train/input/byoudoin.jpg','5' ]
+        self.args = [ '/home/prakhar/SPEC2006_X86/data/bzip2/train/input/byoudoin.jpg','5' ]
     
     def ref(self, isa, os):
-        self.args = [ '/Users/PrakharJawre/SPEC2006_X86/data/bzip2/ref/input/input.source','280' ]
+        self.args = [ '/home/prakhar/SPEC2006_X86/data/bzip2/ref/input/input.source','280' ]
 
 class bzip2_source(bzip2):
     def ref(self, isa, os):
@@ -297,13 +297,13 @@ class gcc(DefaultBenchmark):
     lang = 'C'
     
     def ref(self, isa, os):
-        self.args = [ '/Users/PrakharJawre/SPEC2006_X86/data/gcc/ref/input/scilab.i', '-o', '/Users/PrakharJawre/cpu2006/data/gcc/test/input/scilab.s' ]
+        self.args = [ '/home/prakhar/SPEC2006_X86/data/gcc/ref/input/scilab.i', '-o', '/Users/PrakharJawre/cpu2006/data/gcc/test/input/scilab.s' ]
 
     def test(self, isa, os):
-        self.args = [ '/Users/PrakharJawre/SPEC2006_X86/data/gcc/test/input/cccp.i', '-o', '/Users/PrakharJawre/cpu2006/data/gcc/test/input/cccp.s' ]
+        self.args = [ '/home/prakhar/SPEC2006_X86/data/gcc/test/input/cccp.i', '-o', '/Users/PrakharJawre/cpu2006/data/gcc/test/input/cccp.s' ]
 
     def train(self, isa, os):
-        self.args = [ '/Users/PrakharJawre/SPEC2006_X86/data/gcc/train/input/integrate.i', '-o', '/Users/PrakharJawre/cpu2006/data/gcc/train/input/integrate.s' ]
+        self.args = [ '/home/prakhar/SPEC2006_X86/data/gcc/train/input/integrate.i', '-o', '/Users/PrakharJawre/cpu2006/data/gcc/train/input/integrate.s' ]
 
     def smred(self, isa, os):
         self.args = [ 'c-iterate.i', '-o', 'c-iterate.s' ]
@@ -345,8 +345,8 @@ class zeusmp(DefaultBenchmark):
     lang = 'F'
     
     def ref(self, isa, os):
-	self.cwd = '/Users/PrakharJawre/SPEC2006_X86/data/zeusmp/ref/input/'
-    	self.args = [ '/Users/PrakharJawre/SPEC2006_X86/data/zeusmp/ref/input/zmp_inp' ]
+	self.cwd = '/home/prakhar/SPEC2006_X86/data/zeusmp/ref/input/'
+    	self.args = [ '/home/prakhar/SPEC2006_X86/data/zeusmp/ref/input/zmp_inp' ]
 
 #class mcf(MinneDefaultBenchmark):
 class mcf(DefaultBenchmark):
@@ -355,13 +355,13 @@ class mcf(DefaultBenchmark):
     lang = 'C'
 
     def test(self, isa, os):
-    	self.args = [ '/Users/PrakharJawre/SPEC2006_X86/data/mcf/test/input/inp.in' ]
+    	self.args = [ '/home/prakhar/SPEC2006_X86/data/mcf/test/input/inp.in' ]
 
     def ref(self, isa, os):
-    	self.args = [ '/Users/PrakharJawre/SPEC2006_X86/data/mcf/ref/input/inp.in' ]
+    	self.args = [ '/home/prakhar/SPEC2006_X86/data/mcf/ref/input/inp.in' ]
 
     def train(self, isa, os):
-    	self.args = [ '/Users/PrakharJawre/SPEC2006_X86/data/mcf/train/input/inp.in' ]
+    	self.args = [ '/home/prakhar/SPEC2006_X86/data/mcf/train/input/inp.in' ]
 
 class leslie3d(DefaultBenchmark):
     name = 'leslie3d'
@@ -378,7 +378,7 @@ class hmmer(DefaultBenchmark):
 		      '--num', '5000',
 		      '--sd', '200',
 		      '--seed', '0',
-		      '/Users/PrakharJawre/SPEC2006_X86/data/hmmer/test/input/bombesin.hmm' ]
+		      '/home/prakhar/SPEC2006_X86/data/hmmer/test/input/bombesin.hmm' ]
     	 self.output = 'bombesin.out'
 
     def ref(self, isa, os):
@@ -387,7 +387,7 @@ class hmmer(DefaultBenchmark):
 		      '--num', '500000',
 		      '--sd', '350',
 		      '--seed', '0',
-		      '/Users/PrakharJawre/SPEC2006_X86/data/hmmer/ref/input/retro.hmm' ]
+		      '/home/prakhar/SPEC2006_X86/data/hmmer/ref/input/retro.hmm' ]
     	 self.output = 'retro.out'
 
     def train(self, isa, os):
@@ -396,7 +396,7 @@ class hmmer(DefaultBenchmark):
 		      '--num', '85000',
 		      '--sd', '300',
 		      '--seed', '0',
-		      '/Users/PrakharJawre/SPEC2006_X86/data/hmmer/train/input/leng100.hmm' ]
+		      '/home/prakhar/SPEC2006_X86/data/hmmer/train/input/leng100.hmm' ]
     	 self.output = 'leng100.out'
 
 
@@ -406,13 +406,13 @@ class sjeng(DefaultBenchmark):
     lang = 'C'
     
     def test(self, isa, os):
-    	self.args = [ '/Users/PrakharJawre/SPEC2006_X86/data/sjeng/test/input/test.txt']
+    	self.args = [ '/home/prakhar/SPEC2006_X86/data/sjeng/test/input/test.txt']
 
     def train(self, isa, os):
-    	self.args = [ '/Users/PrakharJawre/SPEC2006_X86/data/sjeng/train/input/train.txt']
+    	self.args = [ '/home/prakhar/SPEC2006_X86/data/sjeng/train/input/train.txt']
 
     def ref(self, isa, os):
-    	self.args = [ '/Users/PrakharJawre/SPEC2006_X86/data/sjeng/ref/input/ref.txt']
+    	self.args = [ '/home/prakhar/SPEC2006_X86/data/sjeng/ref/input/ref.txt']
 
 class GemsFDTD(DefaultBenchmark):
     name = 'GemsFDTD'
@@ -420,14 +420,14 @@ class GemsFDTD(DefaultBenchmark):
     lang = 'F'
 
     def test(self, isa, os):
-    	self.args = [ '/Users/PrakharJawre/SPEC2006_X86/data/GemsFDTD/test/input/test.in']
+    	self.args = [ '/home/prakhar/SPEC2006_X86/data/GemsFDTD/test/input/test.in']
         GemsFDTD.output = 'test.log'
         GemsFDTD.input =  'test.in'
     def ref(self, isa, os):
-    	self.args = [ '/Users/PrakharJawre/SPEC2006_X86/data/GemsFDTD/ref/input/ref.in']
+    	self.args = [ '/home/prakhar/SPEC2006_X86/data/GemsFDTD/ref/input/ref.in']
         GemsFDTD.output = 'ref.log'
     def train(self, isa, os):
-    	self.args = [ '/Users/PrakharJawre/SPEC2006_X86/data/GemsFDTD/test/input/train.in']
+    	self.args = [ '/home/prakhar/SPEC2006_X86/data/GemsFDTD/test/input/train.in']
         GemsFDTD.output = 'train.log'
 
 
@@ -437,7 +437,7 @@ class GemsFDTD(DefaultBenchmark):
 #    lang = 'F'
 #
 #    def test(self, isa, os):
-#        self.args = [ '/Users/PrakharJawre/SPEC2006_X86/data/GemsFDTD/test/input/test.in']
+#        self.args = [ '/home/prakhar/SPEC2006_X86/data/GemsFDTD/test/input/test.in']
 
 
 class h264ref(DefaultBenchmark):
@@ -446,11 +446,11 @@ class h264ref(DefaultBenchmark):
     lang = 'C'
 
     def ref(self, isa, os):
-        self.args = [ '-d','/Users/PrakharJawre/SPEC2006_X86/data/h264ref/ref/input/foreman_ref_encoder_baseline.cfg']
+        self.args = [ '-d','/home/prakhar/SPEC2006_X86/data/h264ref/ref/input/foreman_ref_encoder_baseline.cfg']
         h264ref.output = 'foreman_test_encoder_baseline.out'
     
     def test(self, isa, os):
-        self.args = [ '-d','/Users/PrakharJawre/SPEC2006_X86/data/h264ref/test/input/foreman_test_encoder_baseline.cfg']
+        self.args = [ '-d','/home/prakhar/SPEC2006_X86/data/h264ref/test/input/foreman_test_encoder_baseline.cfg']
         h264ref.output = 'foreman_test_encoder_baseline.out'
 
 class xalancbmk(DefaultBenchmark):
@@ -459,7 +459,7 @@ class xalancbmk(DefaultBenchmark):
     lang = 'C'
 
     def ref(self, isa, os):
-    	self.args = [ '-v', '/Users/PrakharJawre/SPEC2006_X86/data/xalancbmk/ref/input/t5.xml', '/Users/PrakharJawre/SPEC2006_X86/data/xalancbmk/ref/input/xalanc.xsl']
+    	self.args = [ '-v', '/home/prakhar/SPEC2006_X86/data/xalancbmk/ref/input/t5.xml', '/Users/PrakharJawre/SPEC2006_X86/data/xalancbmk/ref/input/xalanc.xsl']
 
 class bwaves(DefaultBenchmark):
     name = 'bwaves'
@@ -467,7 +467,7 @@ class bwaves(DefaultBenchmark):
     lang = 'C'
 
     def all(self, isa, os):
-        self.args = [ '/Users/PrakharJawre/SPEC2006_X86/data/bwaves/test/' ]
+        self.args = [ '/home/prakhar/SPEC2006_X86/data/bwaves/test/' ]
 
 
 
@@ -489,24 +489,24 @@ class lbm(DefaultBenchmark):
     lang = 'C'
     
     def test(self, isa, os):
-         self.args = ['20', 'reference.dat', '0', '1' , '/Users/PrakharJawre/SPEC2006_X86/data/lbm/test/input/100_100_130_cf_a.of']
+         self.args = ['20', 'reference.dat', '0', '1' , '/home/prakhar/SPEC2006_X86/data/lbm/test/input/100_100_130_cf_a.of']
 
     def train(self, isa, os):
-         self.args = ['300', 'reference.dat', '0', '1' , '/Users/PrakharJawre/SPEC2006_X86/data/lbm/train/input/100_100_130_cf_b.of']
+         self.args = ['300', 'reference.dat', '0', '1' , '/home/prakhar/SPEC2006_X86/data/lbm/train/input/100_100_130_cf_b.of']
 
     def ref(self, isa, os):
-         self.args = ['3000', 'reference.dat', '0', '0' , '/Users/PrakharJawre/SPEC2006_X86/data/lbm/ref/input/100_100_130_ldc.of']
+         self.args = ['3000', 'reference.dat', '0', '0' , '/home/prakhar/SPEC2006_X86/data/lbm/ref/input/100_100_130_ldc.of']
 
 class calculix(DefaultBenchmark):
     name = 'calculix'
     lang = 'C'
 
     def test(self, isa, os):
-         self.args =  ['-i','/Users/PrakharJawre/SPEC2006_X86/data/calculix/test/input/beampic']
+         self.args =  ['-i','/home/prakhar/SPEC2006_X86/data/calculix/test/input/beampic']
     def train(self, isa, os):
-         self.args =  ['-i','/Users/PrakharJawre/SPEC2006_X86/data/calculix/train/input/stairs']
+         self.args =  ['-i','/home/prakhar/SPEC2006_X86/data/calculix/train/input/stairs']
     def ref(self, isa, os):
-         self.args =  ['/Users/PrakharJawre/SPEC2006_X86/data/calculix/ref/input/hyperviscoplastic']
+         self.args =  ['/home/prakhar/SPEC2006_X86/data/calculix/ref/input/hyperviscoplastic']
 
 class gromacs(DefaultBenchmark):
     name = 'gromacs'
@@ -514,11 +514,11 @@ class gromacs(DefaultBenchmark):
     lang = 'C'
 
     def test(self, isa, os):
-        self.args = [ '-silent','-deffnm','/Users/PrakharJawre/SPEC2006_X86/data/gromacs/test/input/gromacs.tpr','-nice','2']
+        self.args = [ '-silent','-deffnm','/home/prakhar/SPEC2006_X86/data/gromacs/test/input/gromacs.tpr','-nice','2']
     def train(self, isa, os):
-        self.args = [ '-silent','-deffnm','/Users/PrakharJawre/SPEC2006_X86/data/gromacs/train/input/gromacs.tpr','-nice','0']
+        self.args = [ '-silent','-deffnm','/home/prakhar/SPEC2006_X86/data/gromacs/train/input/gromacs.tpr','-nice','0']
     def ref(self, isa, os):
-        self.args = [ '-silent','-deffnm','/Users/PrakharJawre/SPEC2006_X86/data/gromacs/ref/input/gromacs.tpr','-nice','0']
+        self.args = [ '-silent','-deffnm','/home/prakhar/SPEC2006_X86/data/gromacs/ref/input/gromacs.tpr','-nice','0']
 
 class gobmk(DefaultBenchmark):
     name = 'gobmk'
@@ -527,8 +527,8 @@ class gobmk(DefaultBenchmark):
 
     def all(self, isa, os):
     	self.args = ['--quiet','--mode','gtp'] 
-    #input = '/Users/PrakharJawre/SPEC2006_X86_exe/445.gobmk/data/test/input/capture.tst'
-    #output = '/Users/PrakharJawre/SPEC2006_X86_exe/445.gobmk/data/test/output/capture.out' 
+    #input = '/home/prakhar/SPEC2006_X86_exe/445.gobmk/data/test/input/capture.tst'
+    #output = '/home/prakhar/SPEC2006_X86_exe/445.gobmk/data/test/output/capture.out' 
 #sphinx3=LiveProcess()
 #sphinx3.executable =  binary_dir+'482.sphinx_livepretend_base.alpha-gcc'
 #sphinx3.cmd = [sphinx3.executable]+['ctlfile', '.', 'args.an4']
@@ -540,9 +540,9 @@ class sphinx(DefaultBenchmark):
     lang = 'C'
 
     def all(self, isa, os):
-    	self.args = ["""'/Users/PrakharJawre/SPEC2006_X86/data/sphinx/all/input/model/lm/an4/an4.ctl','/Users/PrakharJawre/SPEC2006_X86/data/sphinx/all/input/model/lm/an4/','/Users/PrakharJawre/SPEC2006_X86/data/sphinx/all/input/model/lm/an4/args.an4.in'"""] 
-       # self.stdin = ['/Users/PrakharJawre/cpu2006/data/sphinx/all/input/model/lm/an4/.']
-       # self.stdin = ['/Users/PrakharJawre/cpu2006/data/sphinx/all/input/model/lm/an4/args.an4.in']
+    	self.args = ["""'/home/prakhar/SPEC2006_X86/data/sphinx/all/input/model/lm/an4/an4.ctl','/Users/PrakharJawre/SPEC2006_X86/data/sphinx/all/input/model/lm/an4/','/Users/PrakharJawre/SPEC2006_X86/data/sphinx/all/input/model/lm/an4/args.an4.in'"""] 
+       # self.stdin = ['/home/prakhar/cpu2006/data/sphinx/all/input/model/lm/an4/.']
+       # self.stdin = ['/home/prakhar/cpu2006/data/sphinx/all/input/model/lm/an4/args.an4.in']
 
        # self.args = [input1, input_dir, input2]     
 
@@ -553,8 +553,8 @@ class astar(DefaultBenchmark):
     lang = 'C++'
 
     def ref(self, isa, os):
-        self.args = ['/Users/PrakharJawre/SPEC2006_X86/data/astar/ref/input/BigLakes2048.cfg']
-	self.output = '/Users/PrakharJawre/SPEC2006_X86/data/astar/ref/input/BigLakes2048.out'   
+        self.args = ['/home/prakhar/SPEC2006_X86/data/astar/ref/input/BigLakes2048.cfg']
+	self.output = '/home/prakhar/SPEC2006_X86/data/astar/ref/input/BigLakes2048.out'   
 
 class dealII(DefaultBenchmark):
     name = 'dealII'
@@ -563,7 +563,7 @@ class dealII(DefaultBenchmark):
 
     def ref(self, isa, os):
         self.stdin = ['23']
-	self.output = '/Users/PrakharJawre/SPEC2006_X86/data/dealII/ref/output/dealII.out'
+	self.output = '/home/prakhar/SPEC2006_X86/data/dealII/ref/output/dealII.out'
 
 class perlbench(DefaultBenchmark):
     name = 'perlbench'
@@ -571,8 +571,8 @@ class perlbench(DefaultBenchmark):
     lang = 'C'
 
     def all(self, isa, os):
-        self.args = ['-I./lib', '/Users/PrakharJawre/SPEC2006_X86/data/perlbench/all/input/diffmail.pl','4', '800', '10', '17', '19', '300']
-	self.output = '/Users/PrakharJawre/SPEC2006_X86/data/perlbench/ref/output/diffmail.out'
+        self.args = ['-I./lib', '/home/prakhar/SPEC2006_X86/data/perlbench/all/input/diffmail.pl','4', '800', '10', '17', '19', '300']
+	self.output = '/home/prakhar/SPEC2006_X86/data/perlbench/ref/output/diffmail.out'
 
 class povray(DefaultBenchmark):
     name = 'povray'
@@ -580,8 +580,8 @@ class povray(DefaultBenchmark):
     lang = 'C++'
 
     def ref(self, isa, os):
-        self.args = ['/Users/PrakharJawre/SPEC2006_X86/data/povray/ref/input/SPEC-benchmark-ref.ini']
-	self.output = '/Users/PrakharJawre/SPEC2006_X86/data/povray/ref/output/povray.out'
+        self.args = ['/home/prakhar/SPEC2006_X86/data/povray/ref/input/SPEC-benchmark-ref.ini']
+	self.output = '/home/prakhar/SPEC2006_X86/data/povray/ref/output/povray.out'
 
 """
 class specrand(DefaultBenchmark):
@@ -590,7 +590,7 @@ class specrand(DefaultBenchmark):
     lang = 'C'
 
     def ref(self, isa, os):
-        self.args = ['/Users/PrakharJawre/SPEC2006_X86/data/cactusADM/ref/input/benchADM.par']
+        self.args = ['/home/prakhar/SPEC2006_X86/data/cactusADM/ref/input/benchADM.par']
 	self.output = 'benchADM.out'
 """
 #**************************************************************************************************************************************************************
