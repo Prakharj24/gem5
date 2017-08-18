@@ -1,1 +1,1 @@
-/Users/PrakharJawre/gem5-git/ext/drampower/src/MemArchitectureSpec.cc
+/home/prakhar/gem5/ext/drampower/src/MemArchitectureSpec.cc

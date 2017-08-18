@@ -1,1 +1,1 @@
-/Users/PrakharJawre/gem5-git/ext/drampower/src/Parameter.h
+/home/prakhar/gem5/ext/drampower/src/Parameter.h

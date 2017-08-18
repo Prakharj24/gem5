@@ -1,1 +1,1 @@
-/Users/PrakharJawre/gem5-git/ext/drampower/src/MemorySpecification.h
+/home/prakhar/gem5/ext/drampower/src/MemorySpecification.h
