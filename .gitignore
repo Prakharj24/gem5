@@ -1,5 +1,6 @@
 build/X86/
 m5out/
 *.pyc
-run_bench.sh
-
+/run_bench.sh
+m5out/config.ini
+m5out/config.json
