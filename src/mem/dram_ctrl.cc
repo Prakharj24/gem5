@@ -1059,22 +1059,22 @@ DRAMCtrl::doDRAMAccess(DRAMPacket* dram_pkt)
     // get the bank
     Bank& bank = dram_pkt->bankRef;
 
-    // for the state we need to track if it is a row hit or not
-    bool row_hit = true;
+    // // for the state we need to track if it is a row hit or not
+    bool row_hit = false;
 
-    // respect any constraints on the command (e.g. tRCD or tCCD)
+    // // respect any constraints on the command (e.g. tRCD or tCCD)
     Tick cmd_at = std::max(bank.colAllowedAt, curTick());
 
-    // Determine the access latency and update the bank state
-    if (bank.openRow == dram_pkt->row) {
-        // nothing to do
-    } else {
-        row_hit = false;
+    // // Determine the access latency and update the bank state
+    // if (bank.openRow == dram_pkt->row) {
+    //     // nothing to do
+    // } else {
+    //     row_hit = false;
 
-        // If there is a page open, precharge it.
-        if (bank.openRow != Bank::NO_ROW) {
-            prechargeBank(rank, bank, std::max(bank.preAllowedAt, curTick()));
-        }
+    //     // If there is a page open, precharge it.
+    //     if (bank.openRow != Bank::NO_ROW) {
+    //         prechargeBank(rank, bank, std::max(bank.preAllowedAt, curTick()));
+    //     }
 
         // next we need to account for the delay in activating the
         // page
@@ -1086,7 +1086,7 @@ DRAMCtrl::doDRAMAccess(DRAMPacket* dram_pkt)
 
         // issue the command as early as possible
         cmd_at = bank.colAllowedAt;
-    }
+    // }
 
     // we need to wait until the bus is available before we can issue
     // the command
@@ -1141,59 +1141,61 @@ DRAMCtrl::doDRAMAccess(DRAMPacket* dram_pkt)
     bank.preAllowedAt = std::max(bank.preAllowedAt,
                                  dram_pkt->isRead ? cmd_at + tRTP :
                                  dram_pkt->readyTime + tWR);
+    
+    prechargeBank(rank, bank, std::max(curTick(), bank.preAllowedAt));
 
     // increment the bytes accessed and the accesses per row
     bank.bytesAccessed += burstSize;
     ++bank.rowAccesses;
 
-    // if we reached the max, then issue with an auto-precharge
-    bool auto_precharge = pageMgmt == Enums::close ||
-        bank.rowAccesses == maxAccessesPerRow;
+    // // if we reached the max, then issue with an auto-precharge
+    // bool auto_precharge = pageMgmt == Enums::close ||
+    //     bank.rowAccesses == maxAccessesPerRow;
 
-    // if we did not hit the limit, we might still want to
-    // auto-precharge
-    if (!auto_precharge &&
-        (pageMgmt == Enums::open_adaptive ||
-         pageMgmt == Enums::close_adaptive)) {
-        // a twist on the open and close page policies:
-        // 1) open_adaptive page policy does not blindly keep the
-        // page open, but close it if there are no row hits, and there
-        // are bank conflicts in the queue
-        // 2) close_adaptive page policy does not blindly close the
-        // page, but closes it only if there are no row hits in the queue.
-        // In this case, only force an auto precharge when there
-        // are no same page hits in the queue
-        bool got_more_hits = false;
-        bool got_bank_conflict = false;
+    // // if we did not hit the limit, we might still want to
+    // // auto-precharge
+    // if (!auto_precharge &&
+    //     (pageMgmt == Enums::open_adaptive ||
+    //      pageMgmt == Enums::close_adaptive)) {
+    //     // a twist on the open and close page policies:
+    //     // 1) open_adaptive page policy does not blindly keep the
+    //     // page open, but close it if there are no row hits, and there
+    //     // are bank conflicts in the queue
+    //     // 2) close_adaptive page policy does not blindly close the
+    //     // page, but closes it only if there are no row hits in the queue.
+    //     // In this case, only force an auto precharge when there
+    //     // are no same page hits in the queue
+    //     bool got_more_hits = false;
+    //     bool got_bank_conflict = false;
 
-        // either look at the read queue or write queue
-        const deque<DRAMPacket*>& queue = dram_pkt->isRead ? readQueue :
-            writeQueue;
-        auto p = queue.begin();
-        // make sure we are not considering the packet that we are
-        // currently dealing with (which is the head of the queue)
-        ++p;
+    //     // either look at the read queue or write queue
+    //     const deque<DRAMPacket*>& queue = dram_pkt->isRead ? readQueue :
+    //         writeQueue;
+    //     auto p = queue.begin();
+    //     // make sure we are not considering the packet that we are
+    //     // currently dealing with (which is the head of the queue)
+    //     ++p;
 
-        // keep on looking until we have found required condition or
-        // reached the end
-        while (!(got_more_hits &&
-                 (got_bank_conflict || pageMgmt == Enums::close_adaptive)) &&
-               p != queue.end()) {
-            bool same_rank_bank = (dram_pkt->rank == (*p)->rank) &&
-                (dram_pkt->bank == (*p)->bank);
-            bool same_row = dram_pkt->row == (*p)->row;
-            got_more_hits |= same_rank_bank && same_row;
-            got_bank_conflict |= same_rank_bank && !same_row;
-            ++p;
-        }
+    //     // keep on looking until we have found required condition or
+    //     // reached the end
+    //     while (!(got_more_hits &&
+    //              (got_bank_conflict || pageMgmt == Enums::close_adaptive)) &&
+    //            p != queue.end()) {
+    //         bool same_rank_bank = (dram_pkt->rank == (*p)->rank) &&
+    //             (dram_pkt->bank == (*p)->bank);
+    //         bool same_row = dram_pkt->row == (*p)->row;
+    //         got_more_hits |= same_rank_bank && same_row;
+    //         got_bank_conflict |= same_rank_bank && !same_row;
+    //         ++p;
+    //     }
 
-        // auto pre-charge when either
-        // 1) open_adaptive policy, we have not got any more hits, and
-        //    have a bank conflict
-        // 2) close_adaptive policy and we have not got any more hits
-        auto_precharge = !got_more_hits &&
-            (got_bank_conflict || pageMgmt == Enums::close_adaptive);
-    }
+    //     // auto pre-charge when either
+    //     // 1) open_adaptive policy, we have not got any more hits, and
+    //     //    have a bank conflict
+    //     // 2) close_adaptive policy and we have not got any more hits
+    //     auto_precharge = !got_more_hits &&
+    //         (got_bank_conflict || pageMgmt == Enums::close_adaptive);
+    // }
 
     // DRAMPower trace command to be written
     std::string mem_cmd = dram_pkt->isRead ? "RD" : "WR";
@@ -1204,13 +1206,13 @@ DRAMCtrl::doDRAMAccess(DRAMPacket* dram_pkt)
 
     // if this access should use auto-precharge, then we are
     // closing the row
-    if (auto_precharge) {
-        // if auto-precharge push a PRE command at the correct tick to the
-        // list used by DRAMPower library to calculate power
-        prechargeBank(rank, bank, std::max(curTick(), bank.preAllowedAt));
+    // if (auto_precharge) {
+    //     // if auto-precharge push a PRE command at the correct tick to the
+    //     // list used by DRAMPower library to calculate power
+    //     prechargeBank(rank, bank, std::max(curTick(), bank.preAllowedAt));
 
-        DPRINTF(DRAM, "Auto-precharged bank: %d\n", dram_pkt->bankId);
-    }
+    //     DPRINTF(DRAM, "Auto-precharged bank: %d\n", dram_pkt->bankId);
+    // }
 
     // Update bus state
     busBusyUntil = dram_pkt->readyTime;
