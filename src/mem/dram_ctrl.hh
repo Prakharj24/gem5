@@ -853,6 +853,13 @@ class DRAMCtrl : public AbstractMemory
         return m1.getTime() < m2.getTime();
     };
 
+    /* vars decleared for TP */
+    static const Tick epoch = 95000;
+    Tick deadTime;
+    int turn;
+
+    void changeTurn();
+    EventWrapper<DRAMCtrl, &DRAMCtrl::changeTurn> nextTurn;
 
   public:
 

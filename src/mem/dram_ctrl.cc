@@ -60,7 +60,7 @@ DRAMCtrl::DRAMCtrl(const DRAMCtrlParams* p) :
     port(name() + ".port", *this), isTimingMode(false),
     retryRdReq(false), retryWrReq(false),
     busState(READ),
-    nextReqEvent(this), respondEvent(this),
+    nextReqEvent(this), respondEvent(this), nextTurn(this),
     drainManager(NULL),
     deviceSize(p->device_size),
     deviceBusWidth(p->device_bus_width), burstLength(p->burst_length),
@@ -90,7 +90,7 @@ DRAMCtrl::DRAMCtrl(const DRAMCtrlParams* p) :
     frontendLatency(p->static_frontend_latency),
     backendLatency(p->static_backend_latency),
     busBusyUntil(0), prevArrival(0),
-    nextReqTime(0), activeRank(0), timeStampOffset(0)
+    nextReqTime(0), activeRank(0), timeStampOffset(0), turn(0)
 {
     // sanity check the ranks since we rely on bit slicing for the
     // address decoding
@@ -766,7 +766,10 @@ DRAMCtrl::chooseNext(std::deque<DRAMPacket*>& queue, bool switched_cmd_type)
     if (queue.size() == 1) {
         DRAMPacket* dram_pkt = queue.front();
         // available rank corresponds to state refresh idle
-        if (ranks[dram_pkt->rank]->isAvailable()) {
+        if (ranks[dram_pkt->rank]->isAvailable() && 
+            dram_pkt->pkt->req->contextId() == turn && 
+            curTick() <= deadTime ) {
+
             found_packet = true;
             DPRINTF(DRAM, "Single request, going to a free rank\n");
         } else {
@@ -779,7 +782,10 @@ DRAMCtrl::chooseNext(std::deque<DRAMPacket*>& queue, bool switched_cmd_type)
         // check if there is a packet going to a free rank
         for(auto i = queue.begin(); i != queue.end() ; ++i) {
             DRAMPacket* dram_pkt = *i;
-            if (ranks[dram_pkt->rank]->isAvailable()) {
+            if (ranks[dram_pkt->rank]->isAvailable() && 
+                dram_pkt->pkt->req->contextId() == turn && 
+                curTick() <= deadTime ) {
+
                 queue.erase(i);
                 queue.push_front(dram_pkt);
                 found_packet = true;
@@ -2286,3 +2292,15 @@ DRAMCtrlParams::create()
 {
     return new DRAMCtrl(this);
 }
+
+/*
+Change turn after a fixed period -
+*/
+
+void
+DRAMCtrl::changeTurn(){
+    turn = 1 - turn;
+    deadTime = curTick() + 65000;
+    schedule(nextTurn, curTick() +  epoch);
+}
+
