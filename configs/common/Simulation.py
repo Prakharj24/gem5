@@ -268,7 +268,7 @@ def benchCheckpoints(options, maxtick, cptdir):
 			if exit_cause != "a thread reached the max instruction count":
 				break
 			count += 1
-		m5.stats.dump()    #dump stat when core completes max insts count simulation. 
+			m5.stats.dump()    #dump stat when core completes max insts count simulation. 
 	   
 
 	   # exit_event = m5.simulate(maxtick - m5.curTick())

@@ -856,8 +856,10 @@ class DRAMCtrl : public AbstractMemory
 
     Tick epochStart;
     int turn, subTurn;
+    Tick prev_act;
     const Tick RAS_period = 100000;
     void scheduleNext();
+    bool inBankGroup(DRAMPacket * dram_pkt);
     void updateEpochStart();
     EventWrapper<DRAMCtrl, &DRAMCtrl::updateEpochStart> updateEpoch;
 

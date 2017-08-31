@@ -91,7 +91,7 @@ DRAMCtrl::DRAMCtrl(const DRAMCtrlParams* p) :
     backendLatency(p->static_backend_latency),
     busBusyUntil(0), prevArrival(0),
     nextReqTime(0), activeRank(0), timeStampOffset(0),
-    epochStart(0), turn(0), subTurn(0), updateEpoch(this)
+    epochStart(0), turn(0), subTurn(0), prev_act(0), updateEpoch(this)
 {
     // sanity check the ranks since we rely on bit slicing for the
     // address decoding
@@ -760,7 +760,7 @@ DRAMCtrl::processRespondEvent()
 bool
 DRAMCtrl::chooseNext(std::deque<DRAMPacket*>& queue, bool switched_cmd_type)
 {
-    //inform("CN: turn = %d, tick = %d ", turn, curTick());
+    inform("CN: turn = %d, tick = %d ", turn, curTick());
     // This method does the arbitration between requests. The chosen
     // packet is simply moved to the head of the queue. The other
     // methods know that this is the place to look. For example, with
@@ -774,7 +774,8 @@ DRAMCtrl::chooseNext(std::deque<DRAMPacket*>& queue, bool switched_cmd_type)
         // available rank corresponds to state refresh idle
         if (ranks[dram_pkt->rank]->isAvailable() &&
                 dram_pkt->pkt->req->hasContextId() &&
-                dram_pkt->pkt->req->contextId() == turn) {
+                dram_pkt->pkt->req->contextId() == turn //&&
+                /*inBankGroup(dram_pkt)*/) {
             found_packet = true;
             DPRINTF(DRAM, "Single request, going to a free rank\n");
         } else {
@@ -789,7 +790,8 @@ DRAMCtrl::chooseNext(std::deque<DRAMPacket*>& queue, bool switched_cmd_type)
             DRAMPacket* dram_pkt = *i;
             if (ranks[dram_pkt->rank]->isAvailable() &&
                 dram_pkt->pkt->req->hasContextId() &&
-                dram_pkt->pkt->req->contextId() == turn) {
+                dram_pkt->pkt->req->contextId() == turn //&&
+                /*inBankGroup(dram_pkt)*/) {
                 queue.erase(i);
                 queue.push_front(dram_pkt);
                 found_packet = true;
@@ -1093,8 +1095,9 @@ DRAMCtrl::doDRAMAccess(DRAMPacket* dram_pkt)
         // Record the activation and deal with all the global timing
         // constraints caused be a new activation (tRRD and tXAW)
         activateBank(rank, bank, act_tick, dram_pkt->row);
-        //inform("activate time = %d", act_tick);
-
+        inform("activate time = %d", act_tick);
+        inform("activate difference = %d", act_tick - prev_act);
+        prev_act = act_tick;
         // issue the command as early as possible
         cmd_at = bank.colAllowedAt;
     // }
@@ -1154,7 +1157,7 @@ DRAMCtrl::doDRAMAccess(DRAMPacket* dram_pkt)
                                  dram_pkt->readyTime + tWR);
 
     prechargeBank(rank, bank, std::max(curTick(), bank.preAllowedAt));
-    //inform("precharge time = %d", std::max(curTick(), bank.preAllowedAt));
+    inform("precharge time = %d", std::max(curTick(), bank.preAllowedAt));
     // increment the bytes accessed and the accesses per row
     bank.bytesAccessed += burstSize;
     ++bank.rowAccesses;
@@ -1269,7 +1272,7 @@ void
 DRAMCtrl::processNextReqEvent()
 {
     epochStart = curTick();
-    //inform("nextReqEvent = %d", curTick());
+    inform("nextReqEvent = %d", curTick());
 
     int busyRanks = 0;
     for (auto r : ranks) {
@@ -1340,7 +1343,7 @@ DRAMCtrl::processNextReqEvent()
 
                 // nothing to do, not even any point in scheduling an
                 // event for the next request
-                //inform("returned!");
+                inform("returned!");
                 return;
             }
         } else {
@@ -2315,7 +2318,7 @@ DRAMCtrl::scheduleNext(){
 void
 DRAMCtrl::updateEpochStart(){
     if(!updateEpoch.scheduled()){
-        //inform("ES: turn = %d, time = %d!", turn, curTick());
+        inform("ES: turn = %d, time = %d!", turn, curTick());
         epochStart = curTick();
         schedule(updateEpoch, epochStart + RAS_period - 10);
         turn = 1 - turn;
@@ -2326,4 +2329,32 @@ DRAMCtrl::updateEpochStart(){
                 subTurn = 0;
         }
     }
+}
+
+bool
+DRAMCtrl::inBankGroup(DRAMPacket * dram_pkt){
+    if(dram_pkt->pkt->req->hasContextId()){
+        int core = dram_pkt->pkt->req->contextId();
+        int bank = dram_pkt->bank;
+        if(core == 0) {
+            if(subTurn == 0 &&( bank == 0 || bank == 3 || bank == 6)) // grp A
+                return true;
+            else if(subTurn == 1 &&( bank == 2 || bank == 5)) // grp C
+                return true;
+            else if(subTurn == 2 &&( bank == 1 || bank == 4 || bank == 7)) // grp B
+                return true;
+            else
+            return false;
+        }
+        else if(core == 1 ){
+            if(subTurn == 0 &&( bank == 1 || bank == 4 || bank == 7)) // grp B
+                return true;
+            else if(subTurn == 1 &&( bank == 0 || bank == 3 || bank == 6)) // grp A
+                return true;
+            else if(subTurn == 2 &&( bank == 2 || bank == 5)) //grp C
+                return true;
+            else
+            return false;
+        }
+    } else return false;
 }
