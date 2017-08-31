@@ -2308,12 +2308,21 @@ DRAMCtrlParams::create()
     return new DRAMCtrl(this);
 }
 
+/*Routine to schedule next request event after RAS period.
+Called in place of schedule();
+var: epochStart: tracks starting tick of the interval. 
+*/
 void
 DRAMCtrl::scheduleNext(){
     if(!nextReqEvent.scheduled())
     schedule(nextReqEvent, epochStart + RAS_period);
     // inform("nextReqEvent@%d", curTick());
 }
+
+/* Updates epochStart
+    starts 10 ticks before to avoid uncertain value of turn when nextrequest is called 
+    var: Turn, subTurn- according to paper
+*/
 
 void
 DRAMCtrl::updateEpochStart(){
@@ -2331,6 +2340,8 @@ DRAMCtrl::updateEpochStart(){
     }
 }
 
+/*To check if the request goes to specific bank group
+*/
 bool
 DRAMCtrl::inBankGroup(DRAMPacket * dram_pkt){
     if(dram_pkt->pkt->req->hasContextId()){
