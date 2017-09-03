@@ -2327,9 +2327,9 @@ DRAMCtrl::scheduleNext(){
 void
 DRAMCtrl::updateEpochStart(){
     if(!updateEpoch.scheduled()){
-        inform("ES: turn = %d, time = %d!", turn, curTick());
-        epochStart = curTick();
-        schedule(updateEpoch, epochStart + RAS_period - 10);
+        
+        epochStart = curTick() + 10;
+        schedule(updateEpoch, curTick() + RAS_period);
         turn = 1 - turn;
         if(turn == 0){
             if(subTurn < 2)
@@ -2337,6 +2337,7 @@ DRAMCtrl::updateEpochStart(){
             else
                 subTurn = 0;
         }
+    inform("ES: turn = %d, time = %d!", turn, curTick());    
     }
 }
 
