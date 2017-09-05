@@ -1,0 +1,2952 @@
+[3;J[H[2Jgem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 compiled Sep  4 2017 21:51:42
+gem5 started Sep  4 2017 21:51:57
+gem5 executing on cse-Lenovo-S510
+command line: ./build/X86/gem5.opt --stats-file=lbm-mcf.txt ./configs/example/se.py -n 2 --caches --l2cache --num-l2caches=2 --mem-size=4GB --mem-channels=1 --mem-ranks=8 --cpu-type=DerivO3CPU -I 1000 --bench lbm-mcf
+executable= /home/prakhar/SPEC2006_X86/binaries/lbm 
+inputs_dir = /home/prakhar/SPEC2006_X86/data/lbm/ref/input 
+outputs_dir = /home/prakhar/SPEC2006_X86/data/lbm/ref/output 
+executable= /home/prakhar/SPEC2006_X86/binaries/mcf 
+inputs_dir = /home/prakhar/SPEC2006_X86/data/mcf/ref/input 
+outputs_dir = /home/prakhar/SPEC2006_X86/data/mcf/ref/output 
+Global frequency set at 1000000000000 ticks per second
+**** REAL SIMULATION ****
+info: Entering event queue @ 0.  Starting simulation...
+info: ES: time = 11500, turn = 1, subTurn = 0
+info: nextReqEvent scheduled@31510
+info: ES: time = 31500, turn = 0, subTurn = 1
+info: nextReqEvent = 31510
+info: CN: time = 31510, turn = 0, subTurn =  1, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 401168
+info: activate time = 31510
+info: activate difference = 31510
+info: precharge time = 66510
+info: nextReqEvent scheduled@51510
+info: ES: time = 51500, turn = 1, subTurn = 1
+info: nextReqEvent = 51510
+info: nextReqEvent scheduled@71510
+info: ES: time = 71500, turn = 0, subTurn = 2
+info: nextReqEvent = 71510
+info: no request in the queues!
+info: ES: time = 91500, turn = 1, subTurn = 2
+info: ES: time = 111500, turn = 0, subTurn = 0
+info: nextReqEvent scheduled@131510
+info: ES: time = 131500, turn = 1, subTurn = 0
+info: nextReqEvent = 131510
+info: nextReqEvent scheduled@151510
+info: ES: time = 151500, turn = 0, subTurn = 1
+info: nextReqEvent = 151510
+info: CN: time = 151510, turn = 0, subTurn =  1, queue_size = 4
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 40117e
+info: activate time = 151510
+info: activate difference = 100000
+info: precharge time = 186510
+info: nextReqEvent scheduled@171510
+info: ES: time = 171500, turn = 1, subTurn = 1
+info: nextReqEvent = 171510
+info: nextReqEvent scheduled@191510
+info: ES: time = 191500, turn = 0, subTurn = 2
+info: nextReqEvent = 191510
+info: CN: time = 191510, turn = 0, subTurn =  2, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 40116d
+info: activate time = 191510
+info: activate difference = 20000
+info: precharge time = 226510
+info: nextReqEvent scheduled@211510
+info: ES: time = 211500, turn = 1, subTurn = 2
+info: nextReqEvent = 211510
+info: nextReqEvent scheduled@231510
+info: ES: time = 231500, turn = 0, subTurn = 0
+info: nextReqEvent = 231510
+info: no request in the queues!
+info: nextReqEvent scheduled@251510
+info: ES: time = 251500, turn = 1, subTurn = 0
+info: nextReqEvent = 251510
+info: nextReqEvent scheduled@271510
+info: ES: time = 271500, turn = 0, subTurn = 1
+info: nextReqEvent = 271510
+info: CN: time = 271510, turn = 0, subTurn =  1, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 405e40
+info: activate time = 271510
+info: activate difference = 60000
+info: precharge time = 306510
+info: nextReqEvent scheduled@291510
+info: ES: time = 291500, turn = 1, subTurn = 1
+info: nextReqEvent = 291510
+info: nextReqEvent scheduled@311510
+info: ES: time = 311500, turn = 0, subTurn = 2
+info: nextReqEvent = 311510
+info: CN: time = 311510, turn = 0, subTurn =  2, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 401175
+info: activate time = 311510
+info: activate difference = 20000
+info: precharge time = 346510
+info: nextReqEvent scheduled@331510
+info: ES: time = 331500, turn = 1, subTurn = 2
+info: nextReqEvent = 331510
+info: nextReqEvent scheduled@351510
+info: ES: time = 351500, turn = 0, subTurn = 0
+info: nextReqEvent = 351510
+info: no request in the queues!
+info: nextReqEvent scheduled@371510
+info: ES: time = 371500, turn = 1, subTurn = 0
+info: nextReqEvent = 371510
+info: nextReqEvent scheduled@391510
+info: ES: time = 391500, turn = 0, subTurn = 1
+info: nextReqEvent = 391510
+info: CN: time = 391510, turn = 0, subTurn =  1, queue_size = 3
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 405e7f
+info: activate time = 391510
+info: activate difference = 60000
+info: precharge time = 426510
+info: nextReqEvent scheduled@411510
+info: ES: time = 411500, turn = 1, subTurn = 1
+info: nextReqEvent = 411510
+info: nextReqEvent scheduled@431510
+info: ES: time = 431500, turn = 0, subTurn = 2
+info: nextReqEvent = 431510
+info: CN: time = 431510, turn = 0, subTurn =  2, queue_size = 3
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 405fe5
+info: activate time = 440260
+info: activate difference = 28750
+info: ..........................................activation not happening on time
+info: precharge time = 475260
+info: nextReqEvent scheduled@451510
+info: ES: time = 451500, turn = 1, subTurn = 2
+info: nextReqEvent = 451510
+info: nextReqEvent scheduled@471510
+info: ES: time = 471500, turn = 0, subTurn = 0
+info: nextReqEvent = 471510
+info: CN: time = 471510, turn = 0, subTurn =  0, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 405e5e
+info: activate time = 471510
+info: activate difference = 20000
+info: precharge time = 506510
+info: nextReqEvent scheduled@491510
+info: ES: time = 491500, turn = 1, subTurn = 0
+info: nextReqEvent = 491510
+info: nextReqEvent scheduled@511510
+info: ES: time = 511500, turn = 0, subTurn = 1
+info: nextReqEvent = 511510
+info: CN: time = 511510, turn = 0, subTurn =  1, queue_size = 2
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@531510
+info: ES: time = 531500, turn = 1, subTurn = 1
+info: nextReqEvent = 531510
+info: nextReqEvent scheduled@551510
+info: ES: time = 551500, turn = 0, subTurn = 2
+info: nextReqEvent = 551510
+info: CN: time = 551510, turn = 0, subTurn =  2, queue_size = 4
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 405ffe
+info: activate time = 551510
+info: activate difference = 20000
+info: precharge time = 586510
+info: nextReqEvent scheduled@571510
+info: ES: time = 571500, turn = 1, subTurn = 2
+info: nextReqEvent = 571510
+info: ..........................................activation not happening on time
+info: nextReqEvent scheduled@591510
+info: ES: time = 591500, turn = 0, subTurn = 0
+info: nextReqEvent = 591510
+info: CN: time = 591510, turn = 0, subTurn =  0, queue_size = 3
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 405ebc
+info: activate time = 591510
+info: activate difference = 11250
+info: precharge time = 626510
+info: nextReqEvent scheduled@611510
+info: ES: time = 611500, turn = 1, subTurn = 0
+info: nextReqEvent = 611510
+info: nextReqEvent scheduled@631510
+info: ES: time = 631500, turn = 0, subTurn = 1
+info: nextReqEvent = 631510
+info: CN: time = 631510, turn = 0, subTurn =  1, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 405eb0
+info: activate time = 631510
+info: activate difference = 40000
+info: precharge time = 666510
+info: nextReqEvent scheduled@651510
+info: ES: time = 651500, turn = 1, subTurn = 1
+info: nextReqEvent = 651510
+info: nextReqEvent scheduled@671510
+info: ES: time = 671500, turn = 0, subTurn = 2
+info: nextReqEvent = 671510
+info: CN: time = 671510, turn = 0, subTurn =  2, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 405e7f
+info: activate time = 671510
+info: activate difference = 40000
+info: precharge time = 706510
+info: nextReqEvent scheduled@691510
+info: ES: time = 691500, turn = 1, subTurn = 2
+info: nextReqEvent = 691510
+info: nextReqEvent scheduled@711510
+info: ES: time = 711500, turn = 0, subTurn = 0
+info: nextReqEvent = 711510
+info: CN: time = 711510, turn = 0, subTurn =  0, queue_size = 5
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 405efc
+info: activate time = 711510
+info: activate difference = 20000
+info: precharge time = 746510
+info: nextReqEvent scheduled@731510
+info: ES: time = 731500, turn = 1, subTurn = 0
+info: nextReqEvent = 731510
+info: ..........................................activation not happening on time
+info: nextReqEvent scheduled@751510
+info: ES: time = 751500, turn = 0, subTurn = 1
+info: nextReqEvent = 751510
+info: CN: time = 751510, turn = 0, subTurn =  1, queue_size = 3
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43ed50
+info: activate time = 751510
+info: activate difference = 11250
+info: precharge time = 786510
+info: nextReqEvent scheduled@771510
+info: ES: time = 771500, turn = 1, subTurn = 1
+info: nextReqEvent = 771510
+info: nextReqEvent scheduled@791510
+info: ES: time = 791500, turn = 0, subTurn = 2
+info: nextReqEvent = 791510
+info: CN: time = 791510, turn = 0, subTurn =  2, queue_size = 2
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 405e9c
+info: activate time = 791510
+info: activate difference = 20000
+info: precharge time = 826510
+info: nextReqEvent scheduled@811510
+info: ES: time = 811500, turn = 1, subTurn = 2
+info: nextReqEvent = 811510
+info: nextReqEvent scheduled@831510
+info: ES: time = 831500, turn = 0, subTurn = 0
+info: nextReqEvent = 831510
+info: no request in the queues!
+info: nextReqEvent scheduled@851510
+info: ES: time = 851500, turn = 1, subTurn = 0
+info: nextReqEvent = 851510
+info: nextReqEvent scheduled@871510
+info: ES: time = 871500, turn = 0, subTurn = 1
+info: nextReqEvent = 871510
+info: CN: time = 871510, turn = 0, subTurn =  1, queue_size = 4
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43ed7f
+info: activate time = 871510
+info: activate difference = 60000
+info: precharge time = 906510
+info: nextReqEvent scheduled@891510
+info: ES: time = 891500, turn = 1, subTurn = 1
+info: nextReqEvent = 891510
+info: nextReqEvent scheduled@911510
+info: ES: time = 911500, turn = 0, subTurn = 2
+info: nextReqEvent = 911510
+info: CN: time = 911510, turn = 0, subTurn =  2, queue_size = 4
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43ed66
+info: activate time = 911510
+info: activate difference = 20000
+info: precharge time = 946510
+info: nextReqEvent scheduled@931510
+info: ES: time = 931500, turn = 1, subTurn = 2
+info: nextReqEvent = 931510
+info: nextReqEvent scheduled@951510
+info: ES: time = 951500, turn = 0, subTurn = 0
+info: nextReqEvent = 951510
+info: CN: time = 951510, turn = 0, subTurn =  0, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43ed78
+info: activate time = 951510
+info: activate difference = 20000
+info: precharge time = 986510
+info: nextReqEvent scheduled@971510
+info: ES: time = 971500, turn = 1, subTurn = 0
+info: nextReqEvent = 971510
+info: nextReqEvent scheduled@991510
+info: ES: time = 991500, turn = 0, subTurn = 1
+info: nextReqEvent = 991510
+info: CN: time = 991510, turn = 0, subTurn =  1, queue_size = 3
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43edc0
+info: activate time = 991510
+info: activate difference = 20000
+info: precharge time = 1026510
+info: nextReqEvent scheduled@1011510
+info: ES: time = 1011500, turn = 1, subTurn = 1
+info: nextReqEvent = 1011510
+info: nextReqEvent scheduled@1031510
+info: ES: time = 1031500, turn = 0, subTurn = 2
+info: nextReqEvent = 1031510
+info: CN: time = 1031510, turn = 0, subTurn =  2, queue_size = 7
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43ed89
+info: activate time = 1031510
+info: activate difference = 40000
+info: precharge time = 1066510
+info: nextReqEvent scheduled@1051510
+info: ES: time = 1051500, turn = 1, subTurn = 2
+info: nextReqEvent = 1051510
+info: nextReqEvent scheduled@1071510
+info: ES: time = 1071500, turn = 0, subTurn = 0
+info: nextReqEvent = 1071510
+info: CN: time = 1071510, turn = 0, subTurn =  0, queue_size = 7
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43ed90
+info: activate time = 1080260
+info: activate difference = 28750
+info: ..........................................activation not happening on time
+info: precharge time = 1115260
+info: nextReqEvent scheduled@1091510
+info: ES: time = 1091500, turn = 1, subTurn = 0
+info: nextReqEvent = 1091510
+info: nextReqEvent scheduled@1111510
+info: ES: time = 1111500, turn = 0, subTurn = 1
+info: nextReqEvent = 1111510
+info: CN: time = 1111510, turn = 0, subTurn =  1, queue_size = 6
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43edaa
+info: activate time = 1129010
+info: activate difference = 37500
+info: ..........................................activation not happening on time
+info: precharge time = 1164010
+info: nextReqEvent scheduled@1131510
+info: ES: time = 1131500, turn = 1, subTurn = 1
+info: nextReqEvent = 1131510
+info: ..........................................activation not happening on time
+info: nextReqEvent scheduled@1151510
+info: ES: time = 1151500, turn = 0, subTurn = 2
+info: nextReqEvent = 1151510
+info: CN: time = 1151510, turn = 0, subTurn =  2, queue_size = 6
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43ed5c
+info: activate time = 1151510
+info: activate difference = 11250
+info: precharge time = 1186510
+info: nextReqEvent scheduled@1171510
+info: ES: time = 1171500, turn = 1, subTurn = 2
+info: nextReqEvent = 1171510
+info: ..........................................activation not happening on time
+info: nextReqEvent scheduled@1191510
+info: ES: time = 1191500, turn = 0, subTurn = 0
+info: nextReqEvent = 1191510
+info: CN: time = 1191510, turn = 0, subTurn =  0, queue_size = 6
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43edfc
+info: activate time = 1191510
+info: activate difference = 2500
+info: precharge time = 1226510
+info: nextReqEvent scheduled@1211510
+info: ES: time = 1211500, turn = 1, subTurn = 0
+info: nextReqEvent = 1211510
+info: nextReqEvent scheduled@1231510
+info: ES: time = 1231500, turn = 0, subTurn = 1
+info: nextReqEvent = 1231510
+info: CN: time = 1231510, turn = 0, subTurn =  1, queue_size = 6
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43edca
+info: activate time = 1231510
+info: activate difference = 20000
+info: precharge time = 1266510
+info: nextReqEvent scheduled@1251510
+info: ES: time = 1251500, turn = 1, subTurn = 1
+info: nextReqEvent = 1251510
+info: nextReqEvent scheduled@1271510
+info: ES: time = 1271500, turn = 0, subTurn = 2
+info: nextReqEvent = 1271510
+info: CN: time = 1271510, turn = 0, subTurn =  2, queue_size = 5
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43edca
+info: activate time = 1280260
+info: activate difference = 28750
+info: ..........................................activation not happening on time
+info: precharge time = 1315260
+info: nextReqEvent scheduled@1291510
+info: ES: time = 1291500, turn = 1, subTurn = 2
+info: nextReqEvent = 1291510
+info: nextReqEvent scheduled@1311510
+info: ES: time = 1311500, turn = 0, subTurn = 0
+info: nextReqEvent = 1311510
+info: CN: time = 1311510, turn = 0, subTurn =  0, queue_size = 4
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43edca
+info: activate time = 1329010
+info: activate difference = 37500
+info: ..........................................activation not happening on time
+info: precharge time = 1364010
+info: nextReqEvent scheduled@1331510
+info: ES: time = 1331500, turn = 1, subTurn = 0
+info: nextReqEvent = 1331510
+info: nextReqEvent scheduled@1351510
+info: ES: time = 1351500, turn = 0, subTurn = 1
+info: nextReqEvent = 1351510
+info: CN: time = 1351510, turn = 0, subTurn =  1, queue_size = 5
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43edd8
+info: activate time = 1351510
+info: activate difference = 20000
+info: precharge time = 1386510
+info: nextReqEvent scheduled@1371510
+info: ES: time = 1371500, turn = 1, subTurn = 1
+info: nextReqEvent = 1371510
+info: nextReqEvent scheduled@1391510
+info: ES: time = 1391500, turn = 0, subTurn = 2
+info: nextReqEvent = 1391510
+info: CN: time = 1391510, turn = 0, subTurn =  2, queue_size = 3
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43ee3f
+info: activate time = 1391510
+info: activate difference = 20000
+info: precharge time = 1426510
+info: nextReqEvent scheduled@1411510
+info: ES: time = 1411500, turn = 1, subTurn = 2
+info: nextReqEvent = 1411510
+info: nextReqEvent scheduled@1431510
+info: ES: time = 1431500, turn = 0, subTurn = 0
+info: nextReqEvent = 1431510
+info: CN: time = 1431510, turn = 0, subTurn =  0, queue_size = 2
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@1451510
+info: ES: time = 1451500, turn = 1, subTurn = 0
+info: nextReqEvent = 1451510
+info: nextReqEvent scheduled@1471510
+info: ES: time = 1471500, turn = 0, subTurn = 1
+info: nextReqEvent = 1471510
+info: CN: time = 1471510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@1491510
+info: ES: time = 1491500, turn = 1, subTurn = 1
+info: nextReqEvent = 1491510
+info: nextReqEvent scheduled@1511510
+info: ES: time = 1511500, turn = 0, subTurn = 2
+info: nextReqEvent = 1511510
+info: CN: time = 1511510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 43ee80
+info: activate time = 1511510
+info: activate difference = 20000
+info: precharge time = 1546510
+info: nextReqEvent scheduled@1531510
+info: ES: time = 1531500, turn = 1, subTurn = 2
+info: nextReqEvent = 1531510
+info: ES: time = 1551500, turn = 0, subTurn = 0
+info: ES: time = 1571500, turn = 1, subTurn = 0
+info: nextReqEvent scheduled@1591510
+info: ES: time = 1591500, turn = 0, subTurn = 1
+info: nextReqEvent = 1591510
+info: CN: time = 1591510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@1611510
+info: ES: time = 1611500, turn = 1, subTurn = 1
+info: nextReqEvent = 1611510
+info: nextReqEvent scheduled@1631510
+info: ES: time = 1631500, turn = 0, subTurn = 2
+info: nextReqEvent = 1631510
+info: CN: time = 1631510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 43eebc
+info: activate time = 1631510
+info: activate difference = 20000
+info: precharge time = 1666510
+info: nextReqEvent scheduled@1651510
+info: ES: time = 1651500, turn = 1, subTurn = 2
+info: nextReqEvent = 1651510
+info: ES: time = 1671500, turn = 0, subTurn = 0
+info: ES: time = 1691500, turn = 1, subTurn = 0
+info: nextReqEvent scheduled@1711510
+info: ES: time = 1711500, turn = 0, subTurn = 1
+info: nextReqEvent = 1711510
+info: CN: time = 1711510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@1731510
+info: ES: time = 1731500, turn = 1, subTurn = 1
+info: nextReqEvent = 1731510
+info: nextReqEvent scheduled@1751510
+info: ES: time = 1751500, turn = 0, subTurn = 2
+info: nextReqEvent = 1751510
+info: CN: time = 1751510, turn = 0, subTurn =  2, queue_size = 2
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43eeff
+info: activate time = 1751510
+info: activate difference = 20000
+info: precharge time = 1786510
+info: nextReqEvent scheduled@1771510
+info: ES: time = 1771500, turn = 1, subTurn = 2
+info: nextReqEvent = 1771510
+info: nextReqEvent scheduled@1791510
+info: ES: time = 1791500, turn = 0, subTurn = 0
+info: nextReqEvent = 1791510
+info: no request in the queues!
+info: ES: time = 1811500, turn = 1, subTurn = 0
+info: ES: time = 1831500, turn = 0, subTurn = 1
+info: nextReqEvent scheduled@1851510
+info: ES: time = 1851500, turn = 1, subTurn = 1
+info: nextReqEvent = 1851510
+info: nextReqEvent scheduled@1871510
+info: ES: time = 1871500, turn = 0, subTurn = 2
+info: nextReqEvent = 1871510
+info: CN: time = 1871510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 43ef40
+info: activate time = 1871510
+info: activate difference = 100000
+info: precharge time = 1906510
+info: nextReqEvent scheduled@1891510
+info: ES: time = 1891500, turn = 1, subTurn = 2
+info: nextReqEvent = 1891510
+info: nextReqEvent scheduled@1911510
+info: ES: time = 1911500, turn = 0, subTurn = 0
+info: nextReqEvent = 1911510
+info: CN: time = 1911510, turn = 0, subTurn =  0, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43ef08
+info: activate time = 1911510
+info: activate difference = 40000
+info: precharge time = 1946510
+info: nextReqEvent scheduled@1931510
+info: ES: time = 1931500, turn = 1, subTurn = 0
+info: nextReqEvent = 1931510
+info: nextReqEvent scheduled@1951510
+info: ES: time = 1951500, turn = 0, subTurn = 1
+info: nextReqEvent = 1951510
+info: CN: time = 1951510, turn = 0, subTurn =  1, queue_size = 5
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43edca
+info: activate time = 1951510
+info: activate difference = 20000
+info: precharge time = 1986510
+info: nextReqEvent scheduled@1971510
+info: ES: time = 1971500, turn = 1, subTurn = 1
+info: nextReqEvent = 1971510
+info: nextReqEvent scheduled@1991510
+info: ES: time = 1991500, turn = 0, subTurn = 2
+info: nextReqEvent = 1991510
+info: CN: time = 1991510, turn = 0, subTurn =  2, queue_size = 6
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 405ed8
+info: activate time = 1991510
+info: activate difference = 20000
+info: precharge time = 2026510
+info: nextReqEvent scheduled@2011510
+info: ES: time = 2011500, turn = 1, subTurn = 2
+info: nextReqEvent = 2011510
+info: nextReqEvent scheduled@2031510
+info: ES: time = 2031500, turn = 0, subTurn = 0
+info: nextReqEvent = 2031510
+info: CN: time = 2031510, turn = 0, subTurn =  0, queue_size = 5
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 405f3f
+info: activate time = 2031510
+info: activate difference = 20000
+info: precharge time = 2066510
+info: nextReqEvent scheduled@2051510
+info: ES: time = 2051500, turn = 1, subTurn = 0
+info: nextReqEvent = 2051510
+info: nextReqEvent scheduled@2071510
+info: ES: time = 2071500, turn = 0, subTurn = 1
+info: nextReqEvent = 2071510
+info: CN: time = 2071510, turn = 0, subTurn =  1, queue_size = 3
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43f6a0
+info: activate time = 2071510
+info: activate difference = 20000
+info: precharge time = 2106510
+info: nextReqEvent scheduled@2091510
+info: ES: time = 2091500, turn = 1, subTurn = 1
+info: nextReqEvent = 2091510
+info: nextReqEvent scheduled@2111510
+info: ES: time = 2111500, turn = 0, subTurn = 2
+info: nextReqEvent = 2111510
+info: CN: time = 2111510, turn = 0, subTurn =  2, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43ef80
+info: activate time = 2120260
+info: activate difference = 28750
+info: ..........................................activation not happening on time
+info: precharge time = 2155260
+info: nextReqEvent scheduled@2131510
+info: ES: time = 2131500, turn = 1, subTurn = 2
+info: nextReqEvent = 2131510
+info: ..........................................activation not happening on time
+info: nextReqEvent scheduled@2151510
+info: ES: time = 2151500, turn = 0, subTurn = 0
+info: nextReqEvent = 2151510
+info: CN: time = 2151510, turn = 0, subTurn =  0, queue_size = 2
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43eef8
+info: activate time = 2151510
+info: activate difference = 11250
+info: precharge time = 2186510
+info: nextReqEvent scheduled@2171510
+info: ES: time = 2171500, turn = 1, subTurn = 0
+info: nextReqEvent = 2171510
+info: nextReqEvent scheduled@2191510
+info: ES: time = 2191500, turn = 0, subTurn = 1
+info: nextReqEvent = 2191510
+info: CN: time = 2191510, turn = 0, subTurn =  1, queue_size = 3
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43f6bd
+info: activate time = 2191510
+info: activate difference = 20000
+info: precharge time = 2226510
+info: nextReqEvent scheduled@2211510
+info: ES: time = 2211500, turn = 1, subTurn = 1
+info: nextReqEvent = 2211510
+info: nextReqEvent scheduled@2231510
+info: ES: time = 2231500, turn = 0, subTurn = 2
+info: nextReqEvent = 2231510
+info: CN: time = 2231510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 470f40
+info: activate time = 2231510
+info: activate difference = 20000
+info: precharge time = 2266510
+info: nextReqEvent scheduled@2251510
+info: ES: time = 2251500, turn = 1, subTurn = 2
+info: nextReqEvent = 2251510
+info: ES: time = 2271500, turn = 0, subTurn = 0
+info: ES: time = 2291500, turn = 1, subTurn = 0
+info: nextReqEvent scheduled@2311510
+info: ES: time = 2311500, turn = 0, subTurn = 1
+info: nextReqEvent = 2311510
+info: CN: time = 2311510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 43edca
+info: activate time = 2311510
+info: activate difference = 80000
+info: precharge time = 2346510
+info: nextReqEvent scheduled@2331510
+info: ES: time = 2331500, turn = 1, subTurn = 1
+info: nextReqEvent = 2331510
+info: nextReqEvent scheduled@2351510
+info: ES: time = 2351500, turn = 0, subTurn = 2
+info: nextReqEvent = 2351510
+info: CN: time = 2351510, turn = 0, subTurn =  2, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43eec8
+info: activate time = 2351510
+info: activate difference = 40000
+info: precharge time = 2386510
+info: nextReqEvent scheduled@2371510
+info: ES: time = 2371500, turn = 1, subTurn = 2
+info: nextReqEvent = 2371510
+info: nextReqEvent scheduled@2391510
+info: ES: time = 2391500, turn = 0, subTurn = 0
+info: nextReqEvent = 2391510
+info: CN: time = 2391510, turn = 0, subTurn =  0, queue_size = 2
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@2411510
+info: ES: time = 2411500, turn = 1, subTurn = 0
+info: nextReqEvent = 2411510
+info: nextReqEvent scheduled@2431510
+info: ES: time = 2431500, turn = 0, subTurn = 1
+info: nextReqEvent = 2431510
+info: CN: time = 2431510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@2451510
+info: ES: time = 2451500, turn = 1, subTurn = 1
+info: nextReqEvent = 2451510
+info: nextReqEvent scheduled@2471510
+info: ES: time = 2471500, turn = 0, subTurn = 2
+info: nextReqEvent = 2471510
+info: no request in the queues!
+info: nextReqEvent scheduled@2491510
+info: ES: time = 2491500, turn = 1, subTurn = 2
+info: nextReqEvent = 2491510
+info: nextReqEvent scheduled@2511510
+info: ES: time = 2511500, turn = 0, subTurn = 0
+info: nextReqEvent = 2511510
+info: CN: time = 2511510, turn = 0, subTurn =  0, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43ee70
+info: activate time = 2511510
+info: activate difference = 20000
+info: precharge time = 2546510
+info: nextReqEvent scheduled@2531510
+info: ES: time = 2531500, turn = 1, subTurn = 0
+info: nextReqEvent = 2531510
+info: nextReqEvent scheduled@2551510
+info: ES: time = 2551500, turn = 0, subTurn = 1
+info: nextReqEvent = 2551510
+info: CN: time = 2551510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 43f6ae
+info: activate time = 2560260
+info: activate difference = 48750
+info: ..........................................activation not happening on time
+info: precharge time = 2595260
+info: nextReqEvent scheduled@2571510
+info: ES: time = 2571500, turn = 1, subTurn = 1
+info: nextReqEvent = 2571510
+info: ES: time = 2591500, turn = 0, subTurn = 2
+info: ES: time = 2611500, turn = 1, subTurn = 2
+info: ES: time = 2631500, turn = 0, subTurn = 0
+info: nextReqEvent scheduled@2651510
+info: ES: time = 2651500, turn = 1, subTurn = 0
+info: nextReqEvent = 2651510
+info: nextReqEvent scheduled@2671510
+info: ES: time = 2671500, turn = 0, subTurn = 1
+info: nextReqEvent = 2671510
+info: CN: time = 2671510, turn = 0, subTurn =  1, queue_size = 3
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43f6fe
+info: activate time = 2671510
+info: activate difference = 111250
+info: precharge time = 2706510
+info: nextReqEvent scheduled@2691510
+info: ES: time = 2691500, turn = 1, subTurn = 1
+info: nextReqEvent = 2691510
+info: nextReqEvent scheduled@2711510
+info: ES: time = 2711500, turn = 0, subTurn = 2
+info: nextReqEvent = 2711510
+info: CN: time = 2711510, turn = 0, subTurn =  2, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43f6c7
+info: activate time = 2711510
+info: activate difference = 20000
+info: precharge time = 2746510
+info: nextReqEvent scheduled@2731510
+info: ES: time = 2731500, turn = 1, subTurn = 2
+info: nextReqEvent = 2731510
+info: nextReqEvent scheduled@2751510
+info: ES: time = 2751500, turn = 0, subTurn = 0
+info: nextReqEvent = 2751510
+info: no request in the queues!
+info: ES: time = 2771500, turn = 1, subTurn = 0
+info: ES: time = 2791500, turn = 0, subTurn = 1
+info: nextReqEvent scheduled@2811510
+info: ES: time = 2811500, turn = 1, subTurn = 1
+info: nextReqEvent = 2811510
+info: nextReqEvent scheduled@2831510
+info: ES: time = 2831500, turn = 0, subTurn = 2
+info: nextReqEvent = 2831510
+info: CN: time = 2831510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 43f740
+info: activate time = 2831510
+info: activate difference = 20000
+info: precharge time = 2866510
+info: nextReqEvent scheduled@2851510
+info: ES: time = 2851500, turn = 1, subTurn = 2
+info: nextReqEvent = 2851510
+info: nextReqEvent scheduled@2871510
+info: ES: time = 2871500, turn = 0, subTurn = 0
+info: nextReqEvent = 2871510
+info: CN: time = 2871510, turn = 0, subTurn =  0, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 406650
+info: activate time = 2871510
+info: activate difference = 40000
+info: precharge time = 2906510
+info: nextReqEvent scheduled@2891510
+info: ES: time = 2891500, turn = 1, subTurn = 0
+info: nextReqEvent = 2891510
+info: nextReqEvent scheduled@2911510
+info: ES: time = 2911500, turn = 0, subTurn = 1
+info: nextReqEvent = 2911510
+info: CN: time = 2911510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@2931510
+info: ES: time = 2931500, turn = 1, subTurn = 1
+info: nextReqEvent = 2931510
+info: nextReqEvent scheduled@2951510
+info: ES: time = 2951500, turn = 0, subTurn = 2
+info: nextReqEvent = 2951510
+info: no request in the queues!
+info: nextReqEvent scheduled@2971510
+info: ES: time = 2971500, turn = 1, subTurn = 2
+info: nextReqEvent = 2971510
+info: nextReqEvent scheduled@2991510
+info: ES: time = 2991500, turn = 0, subTurn = 0
+info: nextReqEvent = 2991510
+info: CN: time = 2991510, turn = 0, subTurn =  0, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 40667f
+info: activate time = 2991510
+info: activate difference = 60000
+info: precharge time = 3026510
+info: nextReqEvent scheduled@3011510
+info: ES: time = 3011500, turn = 1, subTurn = 0
+info: nextReqEvent = 3011510
+info: nextReqEvent scheduled@3031510
+info: ES: time = 3031500, turn = 0, subTurn = 1
+info: nextReqEvent = 3031510
+info: CN: time = 3031510, turn = 0, subTurn =  1, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 406678
+info: activate time = 3031510
+info: activate difference = 40000
+info: precharge time = 3066510
+info: nextReqEvent scheduled@3051510
+info: ES: time = 3051500, turn = 1, subTurn = 1
+info: nextReqEvent = 3051510
+info: nextReqEvent scheduled@3071510
+info: ES: time = 3071500, turn = 0, subTurn = 2
+info: nextReqEvent = 3071510
+info: no request in the queues!
+info: nextReqEvent scheduled@3091510
+info: ES: time = 3091500, turn = 1, subTurn = 2
+info: nextReqEvent = 3091510
+info: nextReqEvent scheduled@3111510
+info: ES: time = 3111500, turn = 0, subTurn = 0
+info: nextReqEvent = 3111510
+info: CN: time = 3111510, turn = 0, subTurn =  0, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 4066c0
+info: activate time = 3111510
+info: activate difference = 60000
+info: precharge time = 3146510
+info: nextReqEvent scheduled@3131510
+info: ES: time = 3131500, turn = 1, subTurn = 0
+info: nextReqEvent = 3131510
+info: nextReqEvent scheduled@3151510
+info: ES: time = 3151500, turn = 0, subTurn = 1
+info: nextReqEvent = 3151510
+info: CN: time = 3151510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 41def0
+info: activate time = 3151510
+info: activate difference = 40000
+info: precharge time = 3186510
+info: nextReqEvent scheduled@3171510
+info: ES: time = 3171500, turn = 1, subTurn = 1
+info: nextReqEvent = 3171510
+info: nextReqEvent scheduled@3191510
+info: ES: time = 3191500, turn = 0, subTurn = 2
+info: nextReqEvent = 3191510
+info: CN: time = 3191510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@3211510
+info: ES: time = 3211500, turn = 1, subTurn = 2
+info: nextReqEvent = 3211510
+info: ..........................................activation not happening on time
+info: nextReqEvent scheduled@3231510
+info: ES: time = 3231500, turn = 0, subTurn = 0
+info: nextReqEvent = 3231510
+info: no request in the queues!
+info: nextReqEvent scheduled@3251510
+info: ES: time = 3251500, turn = 1, subTurn = 0
+info: nextReqEvent = 3251510
+info: nextReqEvent scheduled@3271510
+info: ES: time = 3271500, turn = 0, subTurn = 1
+info: nextReqEvent = 3271510
+info: CN: time = 3271510, turn = 0, subTurn =  1, queue_size = 3
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 41defe
+info: activate time = 3271510
+info: activate difference = 51250
+info: precharge time = 3306510
+info: nextReqEvent scheduled@3291510
+info: ES: time = 3291500, turn = 1, subTurn = 1
+info: nextReqEvent = 3291510
+info: nextReqEvent scheduled@3311510
+info: ES: time = 3311500, turn = 0, subTurn = 2
+info: nextReqEvent = 3311510
+info: CN: time = 3311510, turn = 0, subTurn =  2, queue_size = 3
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 41def0
+info: activate time = 3311510
+info: activate difference = 40000
+info: precharge time = 3346510
+info: nextReqEvent scheduled@3331510
+info: ES: time = 3331500, turn = 1, subTurn = 2
+info: nextReqEvent = 3331510
+info: nextReqEvent scheduled@3351510
+info: ES: time = 3351500, turn = 0, subTurn = 0
+info: nextReqEvent = 3351510
+info: CN: time = 3351510, turn = 0, subTurn =  0, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 4067b0
+info: activate time = 3351510
+info: activate difference = 20000
+info: precharge time = 3386510
+info: nextReqEvent scheduled@3371510
+info: ES: time = 3371500, turn = 1, subTurn = 0
+info: nextReqEvent = 3371510
+info: ES: time = 3391500, turn = 0, subTurn = 1
+info: ES: time = 3411500, turn = 1, subTurn = 1
+info: nextReqEvent scheduled@3431510
+info: ES: time = 3431500, turn = 0, subTurn = 2
+info: nextReqEvent = 3431510
+info: CN: time = 3431510, turn = 0, subTurn =  2, queue_size = 2
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@3451510
+info: ES: time = 3451500, turn = 1, subTurn = 2
+info: nextReqEvent = 3451510
+info: nextReqEvent scheduled@3471510
+info: ES: time = 3471500, turn = 0, subTurn = 0
+info: nextReqEvent = 3471510
+info: CN: time = 3471510, turn = 0, subTurn =  0, queue_size = 2
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 4067bb
+info: activate time = 3471510
+info: activate difference = 20000
+info: precharge time = 3506510
+info: nextReqEvent scheduled@3491510
+info: ES: time = 3491500, turn = 1, subTurn = 0
+info: nextReqEvent = 3491510
+info: nextReqEvent scheduled@3511510
+info: ES: time = 3511500, turn = 0, subTurn = 1
+info: nextReqEvent = 3511510
+info: no request in the queues!
+info: ES: time = 3531500, turn = 1, subTurn = 1
+info: nextReqEvent scheduled@3551510
+info: ES: time = 3551500, turn = 0, subTurn = 2
+info: nextReqEvent = 3551510
+info: CN: time = 3551510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@3571510
+info: ES: time = 3571500, turn = 1, subTurn = 2
+info: nextReqEvent = 3571510
+info: nextReqEvent scheduled@3591510
+info: ES: time = 3591500, turn = 0, subTurn = 0
+info: nextReqEvent = 3591510
+info: CN: time = 3591510, turn = 0, subTurn =  0, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 4067fe
+info: activate time = 3591510
+info: activate difference = 20000
+info: precharge time = 3626510
+info: nextReqEvent scheduled@3611510
+info: ES: time = 3611500, turn = 1, subTurn = 0
+info: nextReqEvent = 3611510
+info: nextReqEvent scheduled@3631510
+info: ES: time = 3631500, turn = 0, subTurn = 1
+info: nextReqEvent = 3631510
+info: no request in the queues!
+info: ES: time = 3651500, turn = 1, subTurn = 1
+info: ES: time = 3671500, turn = 0, subTurn = 2
+info: nextReqEvent scheduled@3691510
+info: ES: time = 3691500, turn = 1, subTurn = 2
+info: nextReqEvent = 3691510
+info: nextReqEvent scheduled@3711510
+info: ES: time = 3711500, turn = 0, subTurn = 0
+info: nextReqEvent = 3711510
+info: CN: time = 3711510, turn = 0, subTurn =  0, queue_size = 5
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 40680a
+info: activate time = 3711510
+info: activate difference = 100000
+info: precharge time = 3746510
+info: nextReqEvent scheduled@3731510
+info: ES: time = 3731500, turn = 1, subTurn = 0
+info: nextReqEvent = 3731510
+info: nextReqEvent scheduled@3751510
+info: ES: time = 3751500, turn = 0, subTurn = 1
+info: nextReqEvent = 3751510
+info: CN: time = 3751510, turn = 0, subTurn =  1, queue_size = 3
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 4066b6
+info: activate time = 3751510
+info: activate difference = 20000
+info: precharge time = 3786510
+info: nextReqEvent scheduled@3771510
+info: ES: time = 3771500, turn = 1, subTurn = 1
+info: nextReqEvent = 3771510
+info: nextReqEvent scheduled@3791510
+info: ES: time = 3791500, turn = 0, subTurn = 2
+info: nextReqEvent = 3791510
+info: CN: time = 3791510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@3811510
+info: ES: time = 3811500, turn = 1, subTurn = 2
+info: nextReqEvent = 3811510
+info: nextReqEvent scheduled@3831510
+info: ES: time = 3831500, turn = 0, subTurn = 0
+info: nextReqEvent = 3831510
+info: CN: time = 3831510, turn = 0, subTurn =  0, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 4066bc
+info: activate time = 3831510
+info: activate difference = 20000
+info: precharge time = 3866510
+info: nextReqEvent scheduled@3851510
+info: ES: time = 3851500, turn = 1, subTurn = 0
+info: nextReqEvent = 3851510
+info: nextReqEvent scheduled@3871510
+info: ES: time = 3871500, turn = 0, subTurn = 1
+info: nextReqEvent = 3871510
+info: CN: time = 3871510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 484190
+info: activate time = 3871510
+info: activate difference = 40000
+info: precharge time = 3906510
+info: nextReqEvent scheduled@3891510
+info: ES: time = 3891500, turn = 1, subTurn = 1
+info: nextReqEvent = 3891510
+info: nextReqEvent scheduled@3911510
+info: ES: time = 3911500, turn = 0, subTurn = 2
+info: nextReqEvent = 3911510
+info: CN: time = 3911510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@3931510
+info: ES: time = 3931500, turn = 1, subTurn = 2
+info: nextReqEvent = 3931510
+info: nextReqEvent scheduled@3951510
+info: ES: time = 3951500, turn = 0, subTurn = 0
+info: nextReqEvent = 3951510
+info: no request in the queues!
+info: nextReqEvent scheduled@3971510
+info: ES: time = 3971500, turn = 1, subTurn = 0
+info: nextReqEvent = 3971510
+info: nextReqEvent scheduled@3991510
+info: ES: time = 3991500, turn = 0, subTurn = 1
+info: nextReqEvent = 3991510
+info: CN: time = 3991510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 4841b8
+info: activate time = 3991510
+info: activate difference = 60000
+info: precharge time = 4026510
+info: nextReqEvent scheduled@4011510
+info: ES: time = 4011500, turn = 1, subTurn = 1
+info: nextReqEvent = 4011510
+info: nextReqEvent scheduled@4031510
+info: ES: time = 4031500, turn = 0, subTurn = 2
+info: nextReqEvent = 4031510
+info: CN: time = 4031510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@4051510
+info: ES: time = 4051500, turn = 1, subTurn = 2
+info: nextReqEvent = 4051510
+info: nextReqEvent scheduled@4071510
+info: ES: time = 4071500, turn = 0, subTurn = 0
+info: nextReqEvent = 4071510
+info: CN: time = 4071510, turn = 0, subTurn =  0, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@4091510
+info: ES: time = 4091500, turn = 1, subTurn = 0
+info: nextReqEvent = 4091510
+info: nextReqEvent scheduled@4111510
+info: ES: time = 4111500, turn = 0, subTurn = 1
+info: nextReqEvent = 4111510
+info: CN: time = 4111510, turn = 0, subTurn =  1, queue_size = 3
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 406700
+info: activate time = 4111510
+info: activate difference = 20000
+info: precharge time = 4146510
+info: nextReqEvent scheduled@4131510
+info: ES: time = 4131500, turn = 1, subTurn = 1
+info: nextReqEvent = 4131510
+info: ..........................................activation not happening on time
+info: nextReqEvent scheduled@4151510
+info: ES: time = 4151500, turn = 0, subTurn = 2
+info: nextReqEvent = 4151510
+info: CN: time = 4151510, turn = 0, subTurn =  2, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 405d10
+info: activate time = 4151510
+info: activate difference = 11250
+info: precharge time = 4186510
+info: nextReqEvent scheduled@4171510
+info: ES: time = 4171500, turn = 1, subTurn = 2
+info: nextReqEvent = 4171510
+info: nextReqEvent scheduled@4191510
+info: ES: time = 4191500, turn = 0, subTurn = 0
+info: nextReqEvent = 4191510
+info: CN: time = 4191510, turn = 0, subTurn =  0, queue_size = 3
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@4211510
+info: ES: time = 4211500, turn = 1, subTurn = 0
+info: nextReqEvent = 4211510
+info: nextReqEvent scheduled@4231510
+info: ES: time = 4231500, turn = 0, subTurn = 1
+info: nextReqEvent = 4231510
+info: CN: time = 4231510, turn = 0, subTurn =  1, queue_size = 2
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@4251510
+info: ES: time = 4251500, turn = 1, subTurn = 1
+info: nextReqEvent = 4251510
+info: nextReqEvent scheduled@4271510
+info: ES: time = 4271500, turn = 0, subTurn = 2
+info: nextReqEvent = 4271510
+info: CN: time = 4271510, turn = 0, subTurn =  2, queue_size = 2
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 406a00
+info: activate time = 4271510
+info: activate difference = 20000
+info: precharge time = 4306510
+info: nextReqEvent scheduled@4291510
+info: ES: time = 4291500, turn = 1, subTurn = 2
+info: nextReqEvent = 4291510
+info: nextReqEvent scheduled@4311510
+info: ES: time = 4311500, turn = 0, subTurn = 0
+info: nextReqEvent = 4311510
+info: no request in the queues!
+info: ES: time = 4331500, turn = 1, subTurn = 0
+info: ES: time = 4351500, turn = 0, subTurn = 1
+info: ES: time = 4371500, turn = 1, subTurn = 1
+info: nextReqEvent scheduled@4391510
+info: ES: time = 4391500, turn = 0, subTurn = 2
+info: nextReqEvent = 4391510
+info: CN: time = 4391510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@4411510
+info: ES: time = 4411500, turn = 1, subTurn = 2
+info: nextReqEvent = 4411510
+info: nextReqEvent scheduled@4431510
+info: ES: time = 4431500, turn = 0, subTurn = 0
+info: nextReqEvent = 4431510
+info: CN: time = 4431510, turn = 0, subTurn =  0, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 41e060
+info: activate time = 4431510
+info: activate difference = 20000
+info: precharge time = 4466510
+info: nextReqEvent scheduled@4451510
+info: ES: time = 4451500, turn = 1, subTurn = 0
+info: nextReqEvent = 4451510
+info: ES: time = 4471500, turn = 0, subTurn = 1
+info: ES: time = 4491500, turn = 1, subTurn = 1
+info: ES: time = 4511500, turn = 0, subTurn = 2
+info: nextReqEvent scheduled@4531510
+info: ES: time = 4531500, turn = 1, subTurn = 2
+info: nextReqEvent = 4531510
+info: nextReqEvent scheduled@4551510
+info: ES: time = 4551500, turn = 0, subTurn = 0
+info: nextReqEvent = 4551510
+info: CN: time = 4551510, turn = 0, subTurn =  0, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 41e07f
+info: activate time = 4551510
+info: activate difference = 20000
+info: precharge time = 4586510
+info: nextReqEvent scheduled@4571510
+info: ES: time = 4571500, turn = 1, subTurn = 0
+info: nextReqEvent = 4571510
+info: ES: time = 4591500, turn = 0, subTurn = 1
+info: ES: time = 4611500, turn = 1, subTurn = 1
+info: nextReqEvent scheduled@4631510
+info: ES: time = 4631500, turn = 0, subTurn = 2
+info: nextReqEvent = 4631510
+info: CN: time = 4631510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@4651510
+info: ES: time = 4651500, turn = 1, subTurn = 2
+info: nextReqEvent = 4651510
+info: nextReqEvent scheduled@4671510
+info: ES: time = 4671500, turn = 0, subTurn = 0
+info: nextReqEvent = 4671510
+info: CN: time = 4671510, turn = 0, subTurn =  0, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 4066ac
+info: activate time = 4671510
+info: activate difference = 20000
+info: precharge time = 4706510
+info: nextReqEvent scheduled@4691510
+info: ES: time = 4691500, turn = 1, subTurn = 0
+info: nextReqEvent = 4691510
+info: nextReqEvent scheduled@4711510
+info: ES: time = 4711500, turn = 0, subTurn = 1
+info: nextReqEvent = 4711510
+info: CN: time = 4711510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 4066a4
+info: activate time = 4720260
+info: activate difference = 48750
+info: ..........................................activation not happening on time
+info: precharge time = 4755260
+info: nextReqEvent scheduled@4731510
+info: ES: time = 4731500, turn = 1, subTurn = 1
+info: nextReqEvent = 4731510
+info: nextReqEvent scheduled@4751510
+info: ES: time = 4751500, turn = 0, subTurn = 2
+info: nextReqEvent = 4751510
+info: CN: time = 4751510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@4771510
+info: ES: time = 4771500, turn = 1, subTurn = 2
+info: nextReqEvent = 4771510
+info: nextReqEvent scheduled@4791510
+info: ES: time = 4791500, turn = 0, subTurn = 0
+info: nextReqEvent = 4791510
+info: CN: time = 4791510, turn = 0, subTurn =  0, queue_size = 2
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 422510
+info: activate time = 4820260
+info: activate difference = 48750
+info: ..........................................activation not happening on time
+info: precharge time = 4855260
+info: nextReqEvent scheduled@4811510
+info: ES: time = 4811500, turn = 1, subTurn = 0
+info: nextReqEvent = 4811510
+info: nextReqEvent scheduled@4831510
+info: ES: time = 4831500, turn = 0, subTurn = 1
+info: nextReqEvent = 4831510
+info: no request in the queues!
+info: ES: time = 4851500, turn = 1, subTurn = 1
+info: ES: time = 4871500, turn = 0, subTurn = 2
+info: ES: time = 4891500, turn = 1, subTurn = 2
+info: ES: time = 4911500, turn = 0, subTurn = 0
+info: nextReqEvent scheduled@4931510
+info: ES: time = 4931500, turn = 1, subTurn = 0
+info: nextReqEvent = 4931510
+info: nextReqEvent scheduled@4951510
+info: ES: time = 4951500, turn = 0, subTurn = 1
+info: nextReqEvent = 4951510
+info: CN: time = 4951510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 423560
+info: activate time = 4951510
+info: activate difference = 20000
+info: precharge time = 4986510
+info: nextReqEvent scheduled@4971510
+info: ES: time = 4971500, turn = 1, subTurn = 1
+info: nextReqEvent = 4971510
+info: ES: time = 4991500, turn = 0, subTurn = 2
+info: ES: time = 5011500, turn = 1, subTurn = 2
+info: ES: time = 5031500, turn = 0, subTurn = 0
+info: nextReqEvent scheduled@5051510
+info: ES: time = 5051500, turn = 1, subTurn = 0
+info: nextReqEvent = 5051510
+info: nextReqEvent scheduled@5071510
+info: ES: time = 5071500, turn = 0, subTurn = 1
+info: nextReqEvent = 5071510
+info: CN: time = 5071510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 42357f
+info: activate time = 5071510
+info: activate difference = 20000
+info: precharge time = 5106510
+info: nextReqEvent scheduled@5091510
+info: ES: time = 5091500, turn = 1, subTurn = 1
+info: nextReqEvent = 5091510
+info: ES: time = 5111500, turn = 0, subTurn = 2
+info: ES: time = 5131500, turn = 1, subTurn = 2
+info: nextReqEvent scheduled@5151510
+info: ES: time = 5151500, turn = 0, subTurn = 0
+info: nextReqEvent = 5151510
+info: CN: time = 5151510, turn = 0, subTurn =  0, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@5171510
+info: ES: time = 5171500, turn = 1, subTurn = 0
+info: nextReqEvent = 5171510
+info: nextReqEvent scheduled@5191510
+info: ES: time = 5191500, turn = 0, subTurn = 1
+info: nextReqEvent = 5191510
+info: CN: time = 5191510, turn = 0, subTurn =  1, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 4066bc
+info: activate time = 5191510
+info: activate difference = 20000
+info: precharge time = 5226510
+info: nextReqEvent scheduled@5211510
+info: ES: time = 5211500, turn = 1, subTurn = 1
+info: nextReqEvent = 5211510
+info: nextReqEvent scheduled@5231510
+info: ES: time = 5231500, turn = 0, subTurn = 2
+info: nextReqEvent = 5231510
+info: CN: time = 5231510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 421ef0
+info: activate time = 5231510
+info: activate difference = 40000
+info: precharge time = 5266510
+info: nextReqEvent scheduled@5251510
+info: ES: time = 5251500, turn = 1, subTurn = 2
+info: nextReqEvent = 5251510
+info: nextReqEvent scheduled@5271510
+info: ES: time = 5271500, turn = 0, subTurn = 0
+info: nextReqEvent = 5271510
+info: CN: time = 5271510, turn = 0, subTurn =  0, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@5291510
+info: ES: time = 5291500, turn = 1, subTurn = 0
+info: nextReqEvent = 5291510
+info: nextReqEvent scheduled@5311510
+info: ES: time = 5311500, turn = 0, subTurn = 1
+info: nextReqEvent = 5311510
+info: CN: time = 5311510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@5331510
+info: ES: time = 5331500, turn = 1, subTurn = 1
+info: nextReqEvent = 5331510
+info: nextReqEvent scheduled@5351510
+info: ES: time = 5351500, turn = 0, subTurn = 2
+info: nextReqEvent = 5351510
+info: CN: time = 5351510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 421efe
+info: activate time = 5351510
+info: activate difference = 20000
+info: precharge time = 5386510
+info: nextReqEvent scheduled@5371510
+info: ES: time = 5371500, turn = 1, subTurn = 2
+info: nextReqEvent = 5371510
+info: ES: time = 5391500, turn = 0, subTurn = 0
+info: ES: time = 5411500, turn = 1, subTurn = 0
+info: ES: time = 5431500, turn = 0, subTurn = 1
+info: nextReqEvent scheduled@5451510
+info: ES: time = 5451500, turn = 1, subTurn = 1
+info: nextReqEvent = 5451510
+info: nextReqEvent scheduled@5471510
+info: ES: time = 5471500, turn = 0, subTurn = 2
+info: nextReqEvent = 5471510
+info: CN: time = 5471510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 439cc0
+info: activate time = 5471510
+info: activate difference = 20000
+info: precharge time = 5506510
+info: nextReqEvent scheduled@5491510
+info: ES: time = 5491500, turn = 1, subTurn = 2
+info: nextReqEvent = 5491510
+info: ES: time = 5511500, turn = 0, subTurn = 0
+info: ES: time = 5531500, turn = 1, subTurn = 0
+info: ES: time = 5551500, turn = 0, subTurn = 1
+info: nextReqEvent scheduled@5571510
+info: ES: time = 5571500, turn = 1, subTurn = 1
+info: nextReqEvent = 5571510
+info: nextReqEvent scheduled@5591510
+info: ES: time = 5591500, turn = 0, subTurn = 2
+info: nextReqEvent = 5591510
+info: CN: time = 5591510, turn = 0, subTurn =  2, queue_size = 2
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 4293f0
+info: activate time = 5591510
+info: activate difference = 20000
+info: precharge time = 5626510
+info: nextReqEvent scheduled@5611510
+info: ES: time = 5611500, turn = 1, subTurn = 2
+info: nextReqEvent = 5611510
+info: ..........................................activation not happening on time
+info: nextReqEvent scheduled@5631510
+info: ES: time = 5631500, turn = 0, subTurn = 0
+info: nextReqEvent = 5631510
+info: no request in the queues!
+info: ES: time = 5651500, turn = 1, subTurn = 0
+info: nextReqEvent scheduled@5671510
+info: ES: time = 5671500, turn = 0, subTurn = 1
+info: nextReqEvent = 5671510
+info: CN: time = 5671510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@5691510
+info: ES: time = 5691500, turn = 1, subTurn = 1
+info: nextReqEvent = 5691510
+info: nextReqEvent scheduled@5711510
+info: ES: time = 5711500, turn = 0, subTurn = 2
+info: nextReqEvent = 5711510
+info: CN: time = 5711510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 4293fe
+info: activate time = 5711510
+info: activate difference = 20000
+info: precharge time = 5746510
+info: nextReqEvent scheduled@5731510
+info: ES: time = 5731500, turn = 1, subTurn = 2
+info: nextReqEvent = 5731510
+info: ES: time = 5751500, turn = 0, subTurn = 0
+info: ES: time = 5771500, turn = 1, subTurn = 0
+info: nextReqEvent scheduled@5791510
+info: ES: time = 5791500, turn = 0, subTurn = 1
+info: nextReqEvent = 5791510
+info: CN: time = 5791510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@5811510
+info: ES: time = 5811500, turn = 1, subTurn = 1
+info: nextReqEvent = 5811510
+info: nextReqEvent scheduled@5831510
+info: ES: time = 5831500, turn = 0, subTurn = 2
+info: nextReqEvent = 5831510
+info: CN: time = 5831510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 4066b6
+info: activate time = 5831510
+info: activate difference = 20000
+info: precharge time = 5866510
+info: nextReqEvent scheduled@5851510
+info: ES: time = 5851500, turn = 1, subTurn = 2
+info: nextReqEvent = 5851510
+info: nextReqEvent scheduled@5871510
+info: ES: time = 5871500, turn = 0, subTurn = 0
+info: nextReqEvent = 5871510
+info: CN: time = 5871510, turn = 0, subTurn =  0, queue_size = 3
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 4066ac
+info: activate time = 5880260
+info: activate difference = 48750
+info: ..........................................activation not happening on time
+info: precharge time = 5915260
+info: nextReqEvent scheduled@5891510
+info: ES: time = 5891500, turn = 1, subTurn = 0
+info: nextReqEvent = 5891510
+info: nextReqEvent scheduled@5911510
+info: ES: time = 5911500, turn = 0, subTurn = 1
+info: nextReqEvent = 5911510
+info: CN: time = 5911510, turn = 0, subTurn =  1, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 40673e
+info: activate time = 5911510
+info: activate difference = 31250
+info: precharge time = 5946510
+info: nextReqEvent scheduled@5931510
+info: ES: time = 5931500, turn = 1, subTurn = 1
+info: nextReqEvent = 5931510
+info: nextReqEvent scheduled@5951510
+info: ES: time = 5951500, turn = 0, subTurn = 2
+info: nextReqEvent = 5951510
+info: CN: time = 5951510, turn = 0, subTurn =  2, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 410320
+info: activate time = 5951510
+info: activate difference = 20000
+info: precharge time = 5986510
+info: nextReqEvent scheduled@5971510
+info: ES: time = 5971500, turn = 1, subTurn = 2
+info: nextReqEvent = 5971510
+info: nextReqEvent scheduled@5991510
+info: ES: time = 5991500, turn = 0, subTurn = 0
+info: nextReqEvent = 5991510
+info: CN: time = 5991510, turn = 0, subTurn =  0, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 4224c0
+info: activate time = 5991510
+info: activate difference = 40000
+info: precharge time = 6026510
+info: nextReqEvent scheduled@6011510
+info: ES: time = 6011500, turn = 1, subTurn = 0
+info: nextReqEvent = 6011510
+info: ES: time = 6031500, turn = 0, subTurn = 1
+info: nextReqEvent scheduled@6051510
+info: ES: time = 6051500, turn = 1, subTurn = 1
+info: nextReqEvent = 6051510
+info: nextReqEvent scheduled@6071510
+info: ES: time = 6071500, turn = 0, subTurn = 2
+info: nextReqEvent = 6071510
+info: no request in the queues!
+info: ES: time = 6091500, turn = 1, subTurn = 2
+info: nextReqEvent scheduled@6111510
+info: ES: time = 6111500, turn = 0, subTurn = 0
+info: nextReqEvent = 6111510
+info: CN: time = 6111510, turn = 0, subTurn =  0, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 410340
+info: activate time = 6111510
+info: activate difference = 60000
+info: precharge time = 6146510
+info: nextReqEvent scheduled@6131510
+info: ES: time = 6131500, turn = 1, subTurn = 0
+info: nextReqEvent = 6131510
+info: nextReqEvent scheduled@6151510
+info: ES: time = 6151500, turn = 0, subTurn = 1
+info: nextReqEvent = 6151510
+info: CN: time = 6151510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 468bb0
+info: activate time = 6151510
+info: activate difference = 40000
+info: precharge time = 6186510
+info: nextReqEvent scheduled@6171510
+info: ES: time = 6171500, turn = 1, subTurn = 1
+info: nextReqEvent = 6171510
+info: nextReqEvent scheduled@6191510
+info: ES: time = 6191500, turn = 0, subTurn = 2
+info: nextReqEvent = 6191510
+info: CN: time = 6191510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@6211510
+info: ES: time = 6211500, turn = 1, subTurn = 2
+info: nextReqEvent = 6211510
+info: nextReqEvent scheduled@6231510
+info: ES: time = 6231500, turn = 0, subTurn = 0
+info: nextReqEvent = 6231510
+info: no request in the queues!
+info: nextReqEvent scheduled@6251510
+info: ES: time = 6251500, turn = 1, subTurn = 0
+info: nextReqEvent = 6251510
+info: nextReqEvent scheduled@6271510
+info: ES: time = 6271500, turn = 0, subTurn = 1
+info: nextReqEvent = 6271510
+info: CN: time = 6271510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 468bbe
+info: activate time = 6271510
+info: activate difference = 60000
+info: precharge time = 6306510
+info: nextReqEvent scheduled@6291510
+info: ES: time = 6291500, turn = 1, subTurn = 1
+info: nextReqEvent = 6291510
+info: nextReqEvent scheduled@6311510
+info: ES: time = 6311500, turn = 0, subTurn = 2
+info: nextReqEvent = 6311510
+info: CN: time = 6311510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@6331510
+info: ES: time = 6331500, turn = 1, subTurn = 2
+info: nextReqEvent = 6331510
+info: nextReqEvent scheduled@6351510
+info: ES: time = 6351500, turn = 0, subTurn = 0
+info: nextReqEvent = 6351510
+info: no request in the queues!
+info: nextReqEvent scheduled@6371510
+info: ES: time = 6371500, turn = 1, subTurn = 0
+info: nextReqEvent = 6371510
+info: nextReqEvent scheduled@6391510
+info: ES: time = 6391500, turn = 0, subTurn = 1
+info: nextReqEvent = 6391510
+info: CN: time = 6391510, turn = 0, subTurn =  1, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 41df3f
+info: activate time = 6391510
+info: activate difference = 60000
+info: precharge time = 6426510
+info: nextReqEvent scheduled@6411510
+info: ES: time = 6411500, turn = 1, subTurn = 1
+info: nextReqEvent = 6411510
+info: nextReqEvent scheduled@6431510
+info: ES: time = 6431500, turn = 0, subTurn = 2
+info: nextReqEvent = 6431510
+info: CN: time = 6431510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 420290
+info: activate time = 6431510
+info: activate difference = 40000
+info: precharge time = 6466510
+info: nextReqEvent scheduled@6451510
+info: ES: time = 6451500, turn = 1, subTurn = 2
+info: nextReqEvent = 6451510
+info: nextReqEvent scheduled@6471510
+info: ES: time = 6471500, turn = 0, subTurn = 0
+info: nextReqEvent = 6471510
+info: no request in the queues!
+info: ES: time = 6491500, turn = 1, subTurn = 0
+info: ES: time = 6511500, turn = 0, subTurn = 1
+info: nextReqEvent scheduled@6531510
+info: ES: time = 6531500, turn = 1, subTurn = 1
+info: nextReqEvent = 6531510
+info: nextReqEvent scheduled@6551510
+info: ES: time = 6551500, turn = 0, subTurn = 2
+info: nextReqEvent = 6551510
+info: CN: time = 6551510, turn = 0, subTurn =  2, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 4202b8
+info: activate time = 6551510
+info: activate difference = 100000
+info: precharge time = 6586510
+info: nextReqEvent scheduled@6571510
+info: ES: time = 6571500, turn = 1, subTurn = 2
+info: nextReqEvent = 6571510
+info: nextReqEvent scheduled@6591510
+info: ES: time = 6591500, turn = 0, subTurn = 0
+info: nextReqEvent = 6591510
+info: no request in the queues!
+info: ES: time = 6611500, turn = 1, subTurn = 0
+info: ES: time = 6631500, turn = 0, subTurn = 1
+info: ES: time = 6651500, turn = 1, subTurn = 1
+info: nextReqEvent scheduled@6671510
+info: ES: time = 6671500, turn = 0, subTurn = 2
+info: nextReqEvent = 6671510
+info: CN: time = 6671510, turn = 0, subTurn =  2, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 423440
+info: activate time = 6671510
+info: activate difference = 100000
+info: precharge time = 6706510
+info: nextReqEvent scheduled@6691510
+info: ES: time = 6691500, turn = 1, subTurn = 2
+info: nextReqEvent = 6691510
+info: nextReqEvent scheduled@6711510
+info: ES: time = 6711500, turn = 0, subTurn = 0
+info: nextReqEvent = 6711510
+info: CN: time = 6711510, turn = 0, subTurn =  0, queue_size = 2
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@6731510
+info: ES: time = 6731500, turn = 1, subTurn = 0
+info: nextReqEvent = 6731510
+info: nextReqEvent scheduled@6751510
+info: ES: time = 6751500, turn = 0, subTurn = 1
+info: nextReqEvent = 6751510
+info: CN: time = 6751510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@6771510
+info: ES: time = 6771500, turn = 1, subTurn = 1
+info: nextReqEvent = 6771510
+info: nextReqEvent scheduled@6791510
+info: ES: time = 6791500, turn = 0, subTurn = 2
+info: nextReqEvent = 6791510
+info: no request in the queues!
+info: ES: time = 6811500, turn = 1, subTurn = 2
+info: nextReqEvent scheduled@6831510
+info: ES: time = 6831500, turn = 0, subTurn = 0
+info: nextReqEvent = 6831510
+info: CN: time = 6831510, turn = 0, subTurn =  0, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 4063d0
+info: activate time = 6831510
+info: activate difference = 60000
+info: precharge time = 6866510
+info: nextReqEvent scheduled@6851510
+info: ES: time = 6851500, turn = 1, subTurn = 0
+info: nextReqEvent = 6851510
+info: nextReqEvent scheduled@6871510
+info: ES: time = 6871500, turn = 0, subTurn = 1
+info: nextReqEvent = 6871510
+info: CN: time = 6871510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@6891510
+info: ES: time = 6891500, turn = 1, subTurn = 1
+info: nextReqEvent = 6891510
+info: nextReqEvent scheduled@6911510
+info: ES: time = 6911500, turn = 0, subTurn = 2
+info: nextReqEvent = 6911510
+info: no request in the queues!
+info: nextReqEvent scheduled@6931510
+info: ES: time = 6931500, turn = 1, subTurn = 2
+info: nextReqEvent = 6931510
+info: nextReqEvent scheduled@6951510
+info: ES: time = 6951500, turn = 0, subTurn = 0
+info: nextReqEvent = 6951510
+info: CN: time = 6951510, turn = 0, subTurn =  0, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 406400
+info: activate time = 6951510
+info: activate difference = 60000
+info: precharge time = 6986510
+info: nextReqEvent scheduled@6971510
+info: ES: time = 6971500, turn = 1, subTurn = 0
+info: nextReqEvent = 6971510
+info: nextReqEvent scheduled@6991510
+info: ES: time = 6991500, turn = 0, subTurn = 1
+info: nextReqEvent = 6991510
+info: CN: time = 6991510, turn = 0, subTurn =  1, queue_size = 3
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@7011510
+info: ES: time = 7011500, turn = 1, subTurn = 1
+info: nextReqEvent = 7011510
+info: nextReqEvent scheduled@7031510
+info: ES: time = 7031500, turn = 0, subTurn = 2
+info: nextReqEvent = 7031510
+info: CN: time = 7031510, turn = 0, subTurn =  2, queue_size = 2
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@7051510
+info: ES: time = 7051500, turn = 1, subTurn = 2
+info: nextReqEvent = 7051510
+info: nextReqEvent scheduled@7071510
+info: ES: time = 7071500, turn = 0, subTurn = 0
+info: nextReqEvent = 7071510
+info: CN: time = 7071510, turn = 0, subTurn =  0, queue_size = 3
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 40643b
+info: activate time = 7071510
+info: activate difference = 20000
+info: precharge time = 7106510
+info: nextReqEvent scheduled@7091510
+info: ES: time = 7091500, turn = 1, subTurn = 0
+info: nextReqEvent = 7091510
+info: ..........................................activation not happening on time
+info: nextReqEvent scheduled@7111510
+info: ES: time = 7111500, turn = 0, subTurn = 1
+info: nextReqEvent = 7111510
+info: CN: time = 7111510, turn = 0, subTurn =  1, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 406419
+info: activate time = 7111510
+info: activate difference = 11250
+info: precharge time = 7146510
+info: nextReqEvent scheduled@7131510
+info: ES: time = 7131500, turn = 1, subTurn = 1
+info: nextReqEvent = 7131510
+info: nextReqEvent scheduled@7151510
+info: ES: time = 7151500, turn = 0, subTurn = 2
+info: nextReqEvent = 7151510
+info: CN: time = 7151510, turn = 0, subTurn =  2, queue_size = 3
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@7171510
+info: ES: time = 7171500, turn = 1, subTurn = 2
+info: nextReqEvent = 7171510
+info: nextReqEvent scheduled@7191510
+info: ES: time = 7191500, turn = 0, subTurn = 0
+info: nextReqEvent = 7191510
+info: CN: time = 7191510, turn = 0, subTurn =  0, queue_size = 4
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 40647f
+info: activate time = 7191510
+info: activate difference = 20000
+info: precharge time = 7226510
+info: nextReqEvent scheduled@7211510
+info: ES: time = 7211500, turn = 1, subTurn = 0
+info: nextReqEvent = 7211510
+info: ..........................................activation not happening on time
+info: nextReqEvent scheduled@7231510
+info: ES: time = 7231500, turn = 0, subTurn = 1
+info: nextReqEvent = 7231510
+info: CN: time = 7231510, turn = 0, subTurn =  1, queue_size = 8
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 406419
+info: activate time = 7231510
+info: activate difference = 11250
+info: precharge time = 7266510
+info: nextReqEvent scheduled@7251510
+info: ES: time = 7251500, turn = 1, subTurn = 1
+info: nextReqEvent = 7251510
+info: ..........................................activation not happening on time
+info: nextReqEvent scheduled@7271510
+info: ES: time = 7271500, turn = 0, subTurn = 2
+info: nextReqEvent = 7271510
+info: CN: time = 7271510, turn = 0, subTurn =  2, queue_size = 7
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 406419
+info: activate time = 7280260
+info: activate difference = 11250
+info: ..........................................activation not happening on time
+info: precharge time = 7315260
+info: nextReqEvent scheduled@7291510
+info: ES: time = 7291500, turn = 1, subTurn = 2
+info: nextReqEvent = 7291510
+info: ..........................................activation not happening on time
+info: nextReqEvent scheduled@7311510
+info: ES: time = 7311500, turn = 0, subTurn = 0
+info: nextReqEvent = 7311510
+info: CN: time = 7311510, turn = 0, subTurn =  0, queue_size = 7
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 406419
+info: activate time = 7329010
+info: activate difference = 11250
+info: ..........................................activation not happening on time
+info: precharge time = 7364010
+info: nextReqEvent scheduled@7331510
+info: ES: time = 7331500, turn = 1, subTurn = 0
+info: nextReqEvent = 7331510
+info: nextReqEvent scheduled@7351510
+info: ES: time = 7351500, turn = 0, subTurn = 1
+info: nextReqEvent = 7351510
+info: CN: time = 7351510, turn = 0, subTurn =  1, queue_size = 6
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 406419
+info: activate time = 7377760
+info: activate difference = 46250
+info: ..........................................activation not happening on time
+info: precharge time = 7412760
+info: nextReqEvent scheduled@7371510
+info: ES: time = 7371500, turn = 1, subTurn = 1
+info: nextReqEvent = 7371510
+info: nextReqEvent scheduled@7391510
+info: ES: time = 7391500, turn = 0, subTurn = 2
+info: nextReqEvent = 7391510
+info: CN: time = 7391510, turn = 0, subTurn =  2, queue_size = 5
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 4064be
+info: activate time = 7391510
+info: activate difference = 20000
+info: precharge time = 7426510
+info: nextReqEvent scheduled@7411510
+info: ES: time = 7411500, turn = 1, subTurn = 2
+info: nextReqEvent = 7411510
+info: nextReqEvent scheduled@7431510
+info: ES: time = 7431500, turn = 0, subTurn = 0
+info: nextReqEvent = 7431510
+info: CN: time = 7431510, turn = 0, subTurn =  0, queue_size = 3
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43bc70
+info: activate time = 7431510
+info: activate difference = 20000
+info: precharge time = 7466510
+info: nextReqEvent scheduled@7451510
+info: ES: time = 7451500, turn = 1, subTurn = 0
+info: nextReqEvent = 7451510
+info: nextReqEvent scheduled@7471510
+info: ES: time = 7471500, turn = 0, subTurn = 1
+info: nextReqEvent = 7471510
+info: CN: time = 7471510, turn = 0, subTurn =  1, queue_size = 3
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 40641e
+info: activate time = 7471510
+info: activate difference = 40000
+info: precharge time = 7506510
+info: nextReqEvent scheduled@7491510
+info: ES: time = 7491500, turn = 1, subTurn = 1
+info: nextReqEvent = 7491510
+info: nextReqEvent scheduled@7511510
+info: ES: time = 7511500, turn = 0, subTurn = 2
+info: nextReqEvent = 7511510
+info: CN: time = 7511510, turn = 0, subTurn =  2, queue_size = 3
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 406489
+info: activate time = 7511510
+info: activate difference = 20000
+info: precharge time = 7546510
+info: nextReqEvent scheduled@7531510
+info: ES: time = 7531500, turn = 1, subTurn = 2
+info: nextReqEvent = 7531510
+info: nextReqEvent scheduled@7551510
+info: ES: time = 7551500, turn = 0, subTurn = 0
+info: nextReqEvent = 7551510
+info: CN: time = 7551510, turn = 0, subTurn =  0, queue_size = 2
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43bc7e
+info: activate time = 7551510
+info: activate difference = 20000
+info: precharge time = 7586510
+info: nextReqEvent scheduled@7571510
+info: ES: time = 7571500, turn = 1, subTurn = 0
+info: nextReqEvent = 7571510
+info: nextReqEvent scheduled@7591510
+info: ES: time = 7591500, turn = 0, subTurn = 1
+info: nextReqEvent = 7591510
+info: CN: time = 7591510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@7611510
+info: ES: time = 7611500, turn = 1, subTurn = 1
+info: nextReqEvent = 7611510
+info: nextReqEvent scheduled@7631510
+info: ES: time = 7631500, turn = 0, subTurn = 2
+info: nextReqEvent = 7631510
+info: CN: time = 7631510, turn = 0, subTurn =  2, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 4064a1
+info: activate time = 7631510
+info: activate difference = 20000
+info: precharge time = 7666510
+info: nextReqEvent scheduled@7651510
+info: ES: time = 7651500, turn = 1, subTurn = 2
+info: nextReqEvent = 7651510
+info: nextReqEvent scheduled@7671510
+info: ES: time = 7671500, turn = 0, subTurn = 0
+info: nextReqEvent = 7671510
+info: CN: time = 7671510, turn = 0, subTurn =  0, queue_size = 3
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43bcbc
+info: activate time = 7671510
+info: activate difference = 20000
+info: precharge time = 7706510
+info: nextReqEvent scheduled@7691510
+info: ES: time = 7691500, turn = 1, subTurn = 0
+info: nextReqEvent = 7691510
+info: nextReqEvent scheduled@7711510
+info: ES: time = 7711500, turn = 0, subTurn = 1
+info: nextReqEvent = 7711510
+info: CN: time = 7711510, turn = 0, subTurn =  1, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43bc7e
+info: activate time = 7711510
+info: activate difference = 40000
+info: precharge time = 7746510
+info: nextReqEvent scheduled@7731510
+info: ES: time = 7731500, turn = 1, subTurn = 1
+info: nextReqEvent = 7731510
+info: nextReqEvent scheduled@7751510
+info: ES: time = 7751500, turn = 0, subTurn = 2
+info: nextReqEvent = 7751510
+info: CN: time = 7751510, turn = 0, subTurn =  2, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 471570
+info: activate time = 7751510
+info: activate difference = 40000
+info: precharge time = 7786510
+info: nextReqEvent scheduled@7771510
+info: ES: time = 7771500, turn = 1, subTurn = 2
+info: nextReqEvent = 7771510
+info: ..........................................activation not happening on time
+info: nextReqEvent scheduled@7791510
+info: ES: time = 7791500, turn = 0, subTurn = 0
+info: nextReqEvent = 7791510
+info: all rank busy!
+info: nextReqEvent scheduled@7811510
+info: ES: time = 7811500, turn = 1, subTurn = 0
+info: nextReqEvent = 7811510
+info: ES: time = 7831500, turn = 0, subTurn = 1
+info: nextReqEvent scheduled@7851510
+info: ES: time = 7851500, turn = 1, subTurn = 1
+info: nextReqEvent = 7851510
+info: ES: time = 7871500, turn = 0, subTurn = 2
+info: ES: time = 7891500, turn = 1, subTurn = 2
+info: ES: time = 7911500, turn = 0, subTurn = 0
+info: ES: time = 7931500, turn = 1, subTurn = 0
+info: ES: time = 7951500, turn = 0, subTurn = 1
+info: ES: time = 7971500, turn = 1, subTurn = 1
+info: ES: time = 7991500, turn = 0, subTurn = 2
+info: ES: time = 8011500, turn = 1, subTurn = 2
+info: ES: time = 8031500, turn = 0, subTurn = 0
+info: nextReqEvent = 8046250
+info: CN: time = 8046250, turn = 0, subTurn =  0, queue_size = 5
+info: turn = 1, rankAvail = -1, inBankGroup = 1
+info: turn = 1, rankAvail = -1, inBankGroup = 1
+info: turn = 1, rankAvail = -1, inBankGroup = 1
+info: turn = 0, rankAvail = -1, inBankGroup = 1
+info: turn = 0, rankAvail = -1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@8066250
+info: ES: time = 8051500, turn = 1, subTurn = 0
+info: nextReqEvent = 8066250
+info: nextReqEvent scheduled@8086250
+info: ES: time = 8071500, turn = 0, subTurn = 1
+info: nextReqEvent = 8086250
+info: CN: time = 8086250, turn = 0, subTurn =  1, queue_size = 4
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43bd00
+info: activate time = 8086250
+info: activate difference = 20000
+info: precharge time = 8121250
+info: nextReqEvent scheduled@8106250
+info: ES: time = 8091500, turn = 1, subTurn = 1
+info: nextReqEvent = 8106250
+info: nextReqEvent scheduled@8126250
+info: ES: time = 8111500, turn = 0, subTurn = 2
+info: nextReqEvent = 8126250
+info: CN: time = 8126250, turn = 0, subTurn =  2, queue_size = 2
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 471580
+info: activate time = 8126250
+info: activate difference = 20000
+info: precharge time = 8161250
+info: nextReqEvent scheduled@8146250
+info: ES: time = 8131500, turn = 1, subTurn = 2
+info: nextReqEvent = 8146250
+info: nextReqEvent scheduled@8166250
+info: ES: time = 8151500, turn = 0, subTurn = 0
+info: nextReqEvent = 8166250
+info: CN: time = 8166250, turn = 0, subTurn =  0, queue_size = 2
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@8186250
+info: ES: time = 8171500, turn = 1, subTurn = 0
+info: nextReqEvent = 8186250
+info: nextReqEvent scheduled@8206250
+info: ES: time = 8191500, turn = 0, subTurn = 1
+info: nextReqEvent = 8206250
+info: CN: time = 8206250, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@8226250
+info: ES: time = 8211500, turn = 1, subTurn = 1
+info: nextReqEvent = 8226250
+info: nextReqEvent scheduled@8246250
+info: ES: time = 8231500, turn = 0, subTurn = 2
+info: nextReqEvent = 8246250
+info: CN: time = 8246250, turn = 0, subTurn =  2, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 4064fc
+info: activate time = 8246250
+info: activate difference = 20000
+info: precharge time = 8281250
+info: nextReqEvent scheduled@8266250
+info: ES: time = 8251500, turn = 1, subTurn = 2
+info: nextReqEvent = 8266250
+info: nextReqEvent scheduled@8286250
+info: ES: time = 8271500, turn = 0, subTurn = 0
+info: nextReqEvent = 8286250
+info: CN: time = 8286250, turn = 0, subTurn =  0, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 406a40
+info: activate time = 8295000
+info: activate difference = 28750
+info: ..........................................activation not happening on time
+info: precharge time = 8330000
+info: nextReqEvent scheduled@8306250
+info: ES: time = 8291500, turn = 1, subTurn = 0
+info: nextReqEvent = 8306250
+info: nextReqEvent scheduled@8326250
+info: ES: time = 8311500, turn = 0, subTurn = 1
+info: nextReqEvent = 8326250
+info: CN: time = 8326250, turn = 0, subTurn =  1, queue_size = 4
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 4064ab
+info: activate time = 8326250
+info: activate difference = 31250
+info: precharge time = 8361250
+info: nextReqEvent scheduled@8346250
+info: ES: time = 8331500, turn = 1, subTurn = 1
+info: nextReqEvent = 8346250
+info: nextReqEvent scheduled@8366250
+info: ES: time = 8351500, turn = 0, subTurn = 2
+info: nextReqEvent = 8366250
+info: CN: time = 8366250, turn = 0, subTurn =  2, queue_size = 4
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 40653e
+info: activate time = 8366250
+info: activate difference = 20000
+info: precharge time = 8401250
+info: nextReqEvent scheduled@8386250
+info: ES: time = 8371500, turn = 1, subTurn = 2
+info: nextReqEvent = 8386250
+info: nextReqEvent scheduled@8406250
+info: ES: time = 8391500, turn = 0, subTurn = 0
+info: nextReqEvent = 8406250
+info: CN: time = 8406250, turn = 0, subTurn =  0, queue_size = 2
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 428a50
+info: activate time = 8406250
+info: activate difference = 20000
+info: precharge time = 8441250
+info: nextReqEvent scheduled@8426250
+info: ES: time = 8411500, turn = 1, subTurn = 0
+info: nextReqEvent = 8426250
+info: nextReqEvent scheduled@8446250
+info: ES: time = 8431500, turn = 0, subTurn = 1
+info: nextReqEvent = 8446250
+info: CN: time = 8446250, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 4064e7
+info: activate time = 8446250
+info: activate difference = 20000
+info: precharge time = 8481250
+info: nextReqEvent scheduled@8466250
+info: ES: time = 8451500, turn = 1, subTurn = 1
+info: nextReqEvent = 8466250
+info: ES: time = 8471500, turn = 0, subTurn = 2
+info: ES: time = 8491500, turn = 1, subTurn = 2
+info: nextReqEvent scheduled@8511510
+info: ES: time = 8511500, turn = 0, subTurn = 0
+info: nextReqEvent = 8511510
+info: CN: time = 8511510, turn = 0, subTurn =  0, queue_size = 3
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 428a80
+info: activate time = 8511510
+info: activate difference = 65260
+info: precharge time = 8546510
+info: nextReqEvent scheduled@8531510
+info: ES: time = 8531500, turn = 1, subTurn = 0
+info: nextReqEvent = 8531510
+info: nextReqEvent scheduled@8551510
+info: ES: time = 8551500, turn = 0, subTurn = 1
+info: nextReqEvent = 8551510
+info: CN: time = 8551510, turn = 0, subTurn =  1, queue_size = 3
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 428a5e
+info: activate time = 8551510
+info: activate difference = 20000
+info: precharge time = 8586510
+info: nextReqEvent scheduled@8571510
+info: ES: time = 8571500, turn = 1, subTurn = 1
+info: nextReqEvent = 8571510
+info: nextReqEvent scheduled@8591510
+info: ES: time = 8591500, turn = 0, subTurn = 2
+info: nextReqEvent = 8591510
+info: CN: time = 8591510, turn = 0, subTurn =  2, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 428ad0
+info: activate time = 8591510
+info: activate difference = 40000
+info: precharge time = 8626510
+info: nextReqEvent scheduled@8611510
+info: ES: time = 8611500, turn = 1, subTurn = 2
+info: nextReqEvent = 8611510
+info: nextReqEvent scheduled@8631510
+info: ES: time = 8631500, turn = 0, subTurn = 0
+info: nextReqEvent = 8631510
+info: CN: time = 8631510, turn = 0, subTurn =  0, queue_size = 3
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 4064ee
+info: activate time = 8631510
+info: activate difference = 40000
+info: precharge time = 8666510
+info: nextReqEvent scheduled@8651510
+info: ES: time = 8651500, turn = 1, subTurn = 0
+info: nextReqEvent = 8651510
+info: nextReqEvent scheduled@8671510
+info: ES: time = 8671500, turn = 0, subTurn = 1
+info: nextReqEvent = 8671510
+info: CN: time = 8671510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@8691510
+info: ES: time = 8691500, turn = 1, subTurn = 1
+info: nextReqEvent = 8691510
+info: nextReqEvent scheduled@8711510
+info: ES: time = 8711500, turn = 0, subTurn = 2
+info: nextReqEvent = 8711510
+info: CN: time = 8711510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 428aff
+info: activate time = 8711510
+info: activate difference = 20000
+info: precharge time = 8746510
+info: nextReqEvent scheduled@8731510
+info: ES: time = 8731500, turn = 1, subTurn = 2
+info: nextReqEvent = 8731510
+info: nextReqEvent scheduled@8751510
+info: ES: time = 8751500, turn = 0, subTurn = 0
+info: nextReqEvent = 8751510
+info: CN: time = 8751510, turn = 0, subTurn =  0, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@8771510
+info: ES: time = 8771500, turn = 1, subTurn = 0
+info: nextReqEvent = 8771510
+info: nextReqEvent scheduled@8791510
+info: ES: time = 8791500, turn = 0, subTurn = 1
+info: nextReqEvent = 8791510
+info: CN: time = 8791510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@8811510
+info: ES: time = 8811500, turn = 1, subTurn = 1
+info: nextReqEvent = 8811510
+info: nextReqEvent scheduled@8831510
+info: ES: time = 8831500, turn = 0, subTurn = 2
+info: nextReqEvent = 8831510
+info: CN: time = 8831510, turn = 0, subTurn =  2, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 428b40
+info: activate time = 8831510
+info: activate difference = 20000
+info: precharge time = 8866510
+info: nextReqEvent scheduled@8851510
+info: ES: time = 8851500, turn = 1, subTurn = 2
+info: nextReqEvent = 8851510
+info: nextReqEvent scheduled@8871510
+info: ES: time = 8871500, turn = 0, subTurn = 0
+info: nextReqEvent = 8871510
+info: CN: time = 8871510, turn = 0, subTurn =  0, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 428b29
+info: activate time = 8871510
+info: activate difference = 40000
+info: precharge time = 8906510
+info: nextReqEvent scheduled@8891510
+info: ES: time = 8891500, turn = 1, subTurn = 0
+info: nextReqEvent = 8891510
+info: nextReqEvent scheduled@8911510
+info: ES: time = 8911500, turn = 0, subTurn = 1
+info: nextReqEvent = 8911510
+info: CN: time = 8911510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@8931510
+info: ES: time = 8931500, turn = 1, subTurn = 1
+info: nextReqEvent = 8931510
+info: nextReqEvent scheduled@8951510
+info: ES: time = 8951500, turn = 0, subTurn = 2
+info: nextReqEvent = 8951510
+info: CN: time = 8951510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 428b80
+info: activate time = 8951510
+info: activate difference = 20000
+info: precharge time = 8986510
+info: nextReqEvent scheduled@8971510
+info: ES: time = 8971500, turn = 1, subTurn = 2
+info: nextReqEvent = 8971510
+info: nextReqEvent scheduled@8991510
+info: ES: time = 8991500, turn = 0, subTurn = 0
+info: nextReqEvent = 8991510
+info: CN: time = 8991510, turn = 0, subTurn =  0, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 428b31
+info: activate time = 8991510
+info: activate difference = 40000
+info: precharge time = 9026510
+info: nextReqEvent scheduled@9011510
+info: ES: time = 9011500, turn = 1, subTurn = 0
+info: nextReqEvent = 9011510
+info: nextReqEvent scheduled@9031510
+info: ES: time = 9031500, turn = 0, subTurn = 1
+info: nextReqEvent = 9031510
+info: CN: time = 9031510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@9051510
+info: ES: time = 9051500, turn = 1, subTurn = 1
+info: nextReqEvent = 9051510
+info: nextReqEvent scheduled@9071510
+info: ES: time = 9071500, turn = 0, subTurn = 2
+info: nextReqEvent = 9071510
+info: CN: time = 9071510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 406576
+info: activate time = 9071510
+info: activate difference = 20000
+info: precharge time = 9106510
+info: nextReqEvent scheduled@9091510
+info: ES: time = 9091500, turn = 1, subTurn = 2
+info: nextReqEvent = 9091510
+info: nextReqEvent scheduled@9111510
+info: ES: time = 9111500, turn = 0, subTurn = 0
+info: nextReqEvent = 9111510
+info: CN: time = 9111510, turn = 0, subTurn =  0, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 406514
+info: activate time = 9111510
+info: activate difference = 40000
+info: precharge time = 9146510
+info: nextReqEvent scheduled@9131510
+info: ES: time = 9131500, turn = 1, subTurn = 0
+info: nextReqEvent = 9131510
+info: nextReqEvent scheduled@9151510
+info: ES: time = 9151500, turn = 0, subTurn = 1
+info: nextReqEvent = 9151510
+info: CN: time = 9151510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@9171510
+info: ES: time = 9171500, turn = 1, subTurn = 1
+info: nextReqEvent = 9171510
+info: nextReqEvent scheduled@9191510
+info: ES: time = 9191500, turn = 0, subTurn = 2
+info: nextReqEvent = 9191510
+info: no request in the queues!
+info: nextReqEvent scheduled@9211510
+info: ES: time = 9211500, turn = 1, subTurn = 2
+info: nextReqEvent = 9211510
+info: nextReqEvent scheduled@9231510
+info: ES: time = 9231500, turn = 0, subTurn = 0
+info: nextReqEvent = 9231510
+info: CN: time = 9231510, turn = 0, subTurn =  0, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 4065c0
+info: activate time = 9231510
+info: activate difference = 60000
+info: precharge time = 9266510
+info: nextReqEvent scheduled@9251510
+info: ES: time = 9251500, turn = 1, subTurn = 0
+info: nextReqEvent = 9251510
+info: nextReqEvent scheduled@9271510
+info: ES: time = 9271500, turn = 0, subTurn = 1
+info: nextReqEvent = 9271510
+info: CN: time = 9271510, turn = 0, subTurn =  1, queue_size = 3
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 406550
+info: activate time = 9271510
+info: activate difference = 20000
+info: precharge time = 9306510
+info: nextReqEvent scheduled@9291510
+info: ES: time = 9291500, turn = 1, subTurn = 1
+info: nextReqEvent = 9291510
+info: nextReqEvent scheduled@9311510
+info: ES: time = 9311500, turn = 0, subTurn = 2
+info: nextReqEvent = 9311510
+info: CN: time = 9311510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@9331510
+info: ES: time = 9331500, turn = 1, subTurn = 2
+info: nextReqEvent = 9331510
+info: nextReqEvent scheduled@9351510
+info: ES: time = 9351500, turn = 0, subTurn = 0
+info: nextReqEvent = 9351510
+info: CN: time = 9351510, turn = 0, subTurn =  0, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 4065fc
+info: activate time = 9351510
+info: activate difference = 20000
+info: precharge time = 9386510
+info: nextReqEvent scheduled@9371510
+info: ES: time = 9371500, turn = 1, subTurn = 0
+info: nextReqEvent = 9371510
+info: nextReqEvent scheduled@9391510
+info: ES: time = 9391500, turn = 0, subTurn = 1
+info: nextReqEvent = 9391510
+info: CN: time = 9391510, turn = 0, subTurn =  1, queue_size = 3
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 406568
+info: activate time = 9391510
+info: activate difference = 40000
+info: precharge time = 9426510
+info: nextReqEvent scheduled@9411510
+info: ES: time = 9411500, turn = 1, subTurn = 1
+info: nextReqEvent = 9411510
+info: nextReqEvent scheduled@9431510
+info: ES: time = 9431500, turn = 0, subTurn = 2
+info: nextReqEvent = 9431510
+info: CN: time = 9431510, turn = 0, subTurn =  2, queue_size = 2
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@9451510
+info: ES: time = 9451500, turn = 1, subTurn = 2
+info: nextReqEvent = 9451510
+info: nextReqEvent scheduled@9471510
+info: ES: time = 9471500, turn = 0, subTurn = 0
+info: nextReqEvent = 9471510
+info: CN: time = 9471510, turn = 0, subTurn =  0, queue_size = 5
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 422540
+info: activate time = 9471510
+info: activate difference = 20000
+info: precharge time = 9506510
+info: nextReqEvent scheduled@9491510
+info: ES: time = 9491500, turn = 1, subTurn = 0
+info: nextReqEvent = 9491510
+info: nextReqEvent scheduled@9511510
+info: ES: time = 9511500, turn = 0, subTurn = 1
+info: nextReqEvent = 9511510
+info: CN: time = 9511510, turn = 0, subTurn =  1, queue_size = 6
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 405f7d
+info: activate time = 9511510
+info: activate difference = 20000
+info: precharge time = 9546510
+info: nextReqEvent scheduled@9531510
+info: ES: time = 9531500, turn = 1, subTurn = 1
+info: nextReqEvent = 9531510
+info: nextReqEvent scheduled@9551510
+info: ES: time = 9551500, turn = 0, subTurn = 2
+info: nextReqEvent = 9551510
+info: CN: time = 9551510, turn = 0, subTurn =  2, queue_size = 4
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 40d070
+info: activate time = 9551510
+info: activate difference = 20000
+info: precharge time = 9586510
+info: nextReqEvent scheduled@9571510
+info: ES: time = 9571500, turn = 1, subTurn = 2
+info: nextReqEvent = 9571510
+info: nextReqEvent scheduled@9591510
+info: ES: time = 9591500, turn = 0, subTurn = 0
+info: nextReqEvent = 9591510
+info: CN: time = 9591510, turn = 0, subTurn =  0, queue_size = 3
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43f7b0
+info: activate time = 9591510
+info: activate difference = 20000
+info: precharge time = 9626510
+info: nextReqEvent scheduled@9611510
+info: ES: time = 9611500, turn = 1, subTurn = 0
+info: nextReqEvent = 9611510
+info: nextReqEvent scheduled@9631510
+info: ES: time = 9631500, turn = 0, subTurn = 1
+info: nextReqEvent = 9631510
+info: CN: time = 9631510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 406581
+info: activate time = 9631510
+info: activate difference = 20000
+info: precharge time = 9666510
+info: nextReqEvent scheduled@9651510
+info: ES: time = 9651500, turn = 1, subTurn = 1
+info: nextReqEvent = 9651510
+info: ES: time = 9671500, turn = 0, subTurn = 2
+info: nextReqEvent scheduled@9691510
+info: ES: time = 9691500, turn = 1, subTurn = 2
+info: nextReqEvent = 9691510
+info: nextReqEvent scheduled@9711510
+info: ES: time = 9711500, turn = 0, subTurn = 0
+info: nextReqEvent = 9711510
+info: CN: time = 9711510, turn = 0, subTurn =  0, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43f7bf
+info: activate time = 9711510
+info: activate difference = 80000
+info: precharge time = 9746510
+info: nextReqEvent scheduled@9731510
+info: ES: time = 9731500, turn = 1, subTurn = 0
+info: nextReqEvent = 9731510
+info: nextReqEvent scheduled@9751510
+info: ES: time = 9751500, turn = 0, subTurn = 1
+info: nextReqEvent = 9751510
+info: CN: time = 9751510, turn = 0, subTurn =  1, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 40658c
+info: activate time = 9751510
+info: activate difference = 20000
+info: precharge time = 9786510
+info: nextReqEvent scheduled@9771510
+info: ES: time = 9771500, turn = 1, subTurn = 1
+info: nextReqEvent = 9771510
+info: ES: time = 9791500, turn = 0, subTurn = 2
+info: nextReqEvent scheduled@9811510
+info: ES: time = 9811500, turn = 1, subTurn = 2
+info: nextReqEvent = 9811510
+info: nextReqEvent scheduled@9831510
+info: ES: time = 9831500, turn = 0, subTurn = 0
+info: nextReqEvent = 9831510
+info: CN: time = 9831510, turn = 0, subTurn =  0, queue_size = 4
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43f7fb
+info: activate time = 9831510
+info: activate difference = 80000
+info: precharge time = 9866510
+info: nextReqEvent scheduled@9851510
+info: ES: time = 9851500, turn = 1, subTurn = 0
+info: nextReqEvent = 9851510
+info: nextReqEvent scheduled@9871510
+info: ES: time = 9871500, turn = 0, subTurn = 1
+info: nextReqEvent = 9871510
+info: CN: time = 9871510, turn = 0, subTurn =  1, queue_size = 3
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43f7df
+info: activate time = 9871510
+info: activate difference = 20000
+info: precharge time = 9906510
+info: nextReqEvent scheduled@9891510
+info: ES: time = 9891500, turn = 1, subTurn = 1
+info: nextReqEvent = 9891510
+info: nextReqEvent scheduled@9911510
+info: ES: time = 9911500, turn = 0, subTurn = 2
+info: nextReqEvent = 9911510
+info: CN: time = 9911510, turn = 0, subTurn =  2, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 44afe0
+info: activate time = 9920260
+info: activate difference = 48750
+info: ..........................................activation not happening on time
+info: precharge time = 9955260
+info: nextReqEvent scheduled@9931510
+info: ES: time = 9931500, turn = 1, subTurn = 2
+info: nextReqEvent = 9931510
+info: nextReqEvent scheduled@9951510
+info: ES: time = 9951500, turn = 0, subTurn = 0
+info: nextReqEvent = 9951510
+info: CN: time = 9951510, turn = 0, subTurn =  0, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 4065a2
+info: activate time = 9969010
+info: activate difference = 48750
+info: ..........................................activation not happening on time
+info: precharge time = 10004010
+info: nextReqEvent scheduled@9971510
+info: ES: time = 9971500, turn = 1, subTurn = 0
+info: nextReqEvent = 9971510
+info: nextReqEvent scheduled@9991510
+info: ES: time = 9991500, turn = 0, subTurn = 1
+info: nextReqEvent = 9991510
+info: no request in the queues!
+info: ES: time = 10011500, turn = 1, subTurn = 1
+info: ES: time = 10031500, turn = 0, subTurn = 2
+info: ES: time = 10051500, turn = 1, subTurn = 2
+info: nextReqEvent scheduled@10071510
+info: ES: time = 10071500, turn = 0, subTurn = 0
+info: nextReqEvent = 10071510
+info: CN: time = 10071510, turn = 0, subTurn =  0, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 4065d7
+info: activate time = 10071510
+info: activate difference = 100000
+info: precharge time = 10106510
+info: nextReqEvent scheduled@10091510
+info: ES: time = 10091500, turn = 1, subTurn = 0
+info: nextReqEvent = 10091510
+info: nextReqEvent scheduled@10111510
+info: ES: time = 10111500, turn = 0, subTurn = 1
+info: nextReqEvent = 10111510
+info: CN: time = 10111510, turn = 0, subTurn =  1, queue_size = 2
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@10131510
+info: ES: time = 10131500, turn = 1, subTurn = 1
+info: nextReqEvent = 10131510
+info: nextReqEvent scheduled@10151510
+info: ES: time = 10151500, turn = 0, subTurn = 2
+info: nextReqEvent = 10151510
+info: CN: time = 10151510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@10171510
+info: ES: time = 10171500, turn = 1, subTurn = 2
+info: nextReqEvent = 10171510
+info: nextReqEvent scheduled@10191510
+info: ES: time = 10191500, turn = 0, subTurn = 0
+info: nextReqEvent = 10191510
+info: CN: time = 10191510, turn = 0, subTurn =  0, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 405f16
+info: activate time = 10191510
+info: activate difference = 20000
+info: precharge time = 10226510
+info: nextReqEvent scheduled@10211510
+info: ES: time = 10211500, turn = 1, subTurn = 0
+info: nextReqEvent = 10211510
+info: ES: time = 10231500, turn = 0, subTurn = 1
+info: ES: time = 10251500, turn = 1, subTurn = 1
+info: nextReqEvent scheduled@10271510
+info: ES: time = 10271500, turn = 0, subTurn = 2
+info: nextReqEvent = 10271510
+info: CN: time = 10271510, turn = 0, subTurn =  2, queue_size = 3
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@10291510
+info: ES: time = 10291500, turn = 1, subTurn = 2
+info: nextReqEvent = 10291510
+info: nextReqEvent scheduled@10311510
+info: ES: time = 10311500, turn = 0, subTurn = 0
+info: nextReqEvent = 10311510
+info: CN: time = 10311510, turn = 0, subTurn =  0, queue_size = 5
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43f840
+info: activate time = 10311510
+info: activate difference = 20000
+info: precharge time = 10346510
+info: nextReqEvent scheduled@10331510
+info: ES: time = 10331500, turn = 1, subTurn = 0
+info: nextReqEvent = 10331510
+info: nextReqEvent scheduled@10351510
+info: ES: time = 10351500, turn = 0, subTurn = 1
+info: nextReqEvent = 10351510
+info: CN: time = 10351510, turn = 0, subTurn =  1, queue_size = 3
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43f650
+info: activate time = 10360260
+info: activate difference = 28750
+info: ..........................................activation not happening on time
+info: precharge time = 10395260
+info: nextReqEvent scheduled@10371510
+info: ES: time = 10371500, turn = 1, subTurn = 1
+info: nextReqEvent = 10371510
+info: nextReqEvent scheduled@10391510
+info: ES: time = 10391500, turn = 0, subTurn = 2
+info: nextReqEvent = 10391510
+info: CN: time = 10391510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 43f7fb
+info: activate time = 10391510
+info: activate difference = 20000
+info: precharge time = 10426510
+info: nextReqEvent scheduled@10411510
+info: ES: time = 10411500, turn = 1, subTurn = 2
+info: nextReqEvent = 10411510
+info: ES: time = 10431500, turn = 0, subTurn = 0
+info: ES: time = 10451500, turn = 1, subTurn = 0
+info: nextReqEvent scheduled@10471510
+info: ES: time = 10471500, turn = 0, subTurn = 1
+info: nextReqEvent = 10471510
+info: CN: time = 10471510, turn = 0, subTurn =  1, queue_size = 3
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43efc0
+info: activate time = 10471510
+info: activate difference = 80000
+info: precharge time = 10506510
+info: nextReqEvent scheduled@10491510
+info: ES: time = 10491500, turn = 1, subTurn = 1
+info: nextReqEvent = 10491510
+info: nextReqEvent scheduled@10511510
+info: ES: time = 10511500, turn = 0, subTurn = 2
+info: nextReqEvent = 10511510
+info: CN: time = 10511510, turn = 0, subTurn =  2, queue_size = 3
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 40ce70
+info: activate time = 10511510
+info: activate difference = 20000
+info: precharge time = 10546510
+info: nextReqEvent scheduled@10531510
+info: ES: time = 10531500, turn = 1, subTurn = 2
+info: nextReqEvent = 10531510
+info: ..........................................activation not happening on time
+info: nextReqEvent scheduled@10551510
+info: ES: time = 10551500, turn = 0, subTurn = 0
+info: nextReqEvent = 10551510
+info: CN: time = 10551510, turn = 0, subTurn =  0, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 43ef4b
+info: activate time = 10551510
+info: activate difference = 11250
+info: precharge time = 10586510
+info: nextReqEvent scheduled@10571510
+info: ES: time = 10571500, turn = 1, subTurn = 0
+info: nextReqEvent = 10571510
+info: ES: time = 10591500, turn = 0, subTurn = 1
+info: nextReqEvent scheduled@10611510
+info: ES: time = 10611500, turn = 1, subTurn = 1
+info: nextReqEvent = 10611510
+info: nextReqEvent scheduled@10631510
+info: ES: time = 10631500, turn = 0, subTurn = 2
+info: nextReqEvent = 10631510
+info: CN: time = 10631510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 40ce7d
+info: activate time = 10631510
+info: activate difference = 80000
+info: precharge time = 10666510
+info: nextReqEvent scheduled@10651510
+info: ES: time = 10651500, turn = 1, subTurn = 2
+info: nextReqEvent = 10651510
+info: nextReqEvent scheduled@10671510
+info: ES: time = 10671500, turn = 0, subTurn = 0
+info: nextReqEvent = 10671510
+info: no request in the queues!
+info: ES: time = 10691500, turn = 1, subTurn = 0
+info: ES: time = 10711500, turn = 0, subTurn = 1
+info: nextReqEvent scheduled@10731510
+info: ES: time = 10731500, turn = 1, subTurn = 1
+info: nextReqEvent = 10731510
+info: nextReqEvent scheduled@10751510
+info: ES: time = 10751500, turn = 0, subTurn = 2
+info: nextReqEvent = 10751510
+info: CN: time = 10751510, turn = 0, subTurn =  2, queue_size = 4
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 40cec0
+info: activate time = 10751510
+info: activate difference = 100000
+info: precharge time = 10786510
+info: nextReqEvent scheduled@10771510
+info: ES: time = 10771500, turn = 1, subTurn = 2
+info: nextReqEvent = 10771510
+info: nextReqEvent scheduled@10791510
+info: ES: time = 10791500, turn = 0, subTurn = 0
+info: nextReqEvent = 10791510
+info: CN: time = 10791510, turn = 0, subTurn =  0, queue_size = 5
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 40ce95
+info: activate time = 10791510
+info: activate difference = 20000
+info: precharge time = 10826510
+info: nextReqEvent scheduled@10811510
+info: ES: time = 10811500, turn = 1, subTurn = 0
+info: nextReqEvent = 10811510
+info: nextReqEvent scheduled@10831510
+info: ES: time = 10831500, turn = 0, subTurn = 1
+info: nextReqEvent = 10831510
+info: CN: time = 10831510, turn = 0, subTurn =  1, queue_size = 3
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 4205c0
+info: activate time = 10840260
+info: activate difference = 28750
+info: ..........................................activation not happening on time
+info: precharge time = 10875260
+info: nextReqEvent scheduled@10851510
+info: ES: time = 10851500, turn = 1, subTurn = 1
+info: nextReqEvent = 10851510
+info: nextReqEvent scheduled@10871510
+info: ES: time = 10871500, turn = 0, subTurn = 2
+info: nextReqEvent = 10871510
+info: CN: time = 10871510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: no read request selected
+info: nextReqEvent scheduled@10891510
+info: ES: time = 10891500, turn = 1, subTurn = 2
+info: nextReqEvent = 10891510
+info: nextReqEvent scheduled@10911510
+Exiting core 0 @ tick 10903500 because a thread reached the max instruction count
+info: Entering event queue @ 10903500.  Starting simulation...
+info: ES: time = 10911500, turn = 0, subTurn = 0
+info: nextReqEvent = 10911510
+info: no request in the queues!
+info: nextReqEvent scheduled@10931510
+info: ES: time = 10931500, turn = 1, subTurn = 0
+info: nextReqEvent = 10931510
+info: nextReqEvent scheduled@10951510
+info: ES: time = 10951500, turn = 0, subTurn = 1
+info: nextReqEvent = 10951510
+info: CN: time = 10951510, turn = 0, subTurn =  1, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 4205ff
+info: activate time = 10951510
+info: activate difference = 60000
+info: precharge time = 10986510
+info: nextReqEvent scheduled@10971510
+info: ES: time = 10971500, turn = 1, subTurn = 1
+info: nextReqEvent = 10971510
+info: nextReqEvent scheduled@10991510
+info: ES: time = 10991500, turn = 0, subTurn = 2
+info: nextReqEvent = 10991510
+info: CN: time = 10991510, turn = 0, subTurn =  2, queue_size = 2
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 42065b
+info: activate time = 11000260
+info: activate difference = 48750
+info: ..........................................activation not happening on time
+info: precharge time = 11035260
+info: nextReqEvent scheduled@11011510
+info: ES: time = 11011500, turn = 1, subTurn = 2
+info: nextReqEvent = 11011510
+info: nextReqEvent scheduled@11031510
+info: ES: time = 11031500, turn = 0, subTurn = 0
+info: nextReqEvent = 11031510
+info: no request in the queues!
+info: ES: time = 11051500, turn = 1, subTurn = 0
+info: ES: time = 11071500, turn = 0, subTurn = 1
+info: ES: time = 11091500, turn = 1, subTurn = 1
+info: nextReqEvent scheduled@11111510
+info: ES: time = 11111500, turn = 0, subTurn = 2
+info: nextReqEvent = 11111510
+info: CN: time = 11111510, turn = 0, subTurn =  2, queue_size = 4
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 40cf00
+info: activate time = 11111510
+info: activate difference = 100000
+info: precharge time = 11146510
+info: nextReqEvent scheduled@11131510
+info: ES: time = 11131500, turn = 1, subTurn = 2
+info: nextReqEvent = 11131510
+info: nextReqEvent scheduled@11151510
+info: ES: time = 11151500, turn = 0, subTurn = 0
+info: nextReqEvent = 11151510
+info: CN: time = 11151510, turn = 0, subTurn =  0, queue_size = 4
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43ef7d
+info: activate time = 11151510
+info: activate difference = 20000
+info: precharge time = 11186510
+info: nextReqEvent scheduled@11171510
+info: ES: time = 11171500, turn = 1, subTurn = 0
+info: nextReqEvent = 11171510
+info: nextReqEvent scheduled@11191510
+info: ES: time = 11191500, turn = 0, subTurn = 1
+info: nextReqEvent = 11191510
+info: CN: time = 11191510, turn = 0, subTurn =  1, queue_size = 3
+info: turn = 1, rankAvail = 1, inBankGroup = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatch request
+info: PC of packet = 43f000
+info: activate time = 11191510
+info: activate difference = 20000
+info: precharge time = 11226510
+info: nextReqEvent scheduled@11211510
+info: ES: time = 11211500, turn = 1, subTurn = 1
+info: nextReqEvent = 11211510
+info: nextReqEvent scheduled@11231510
+info: ES: time = 11231500, turn = 0, subTurn = 2
+info: nextReqEvent = 11231510
+info: CN: time = 11231510, turn = 0, subTurn =  2, queue_size = 1
+info: turn = 0, rankAvail = 1, inBankGroup = 1
+info: dispatched single
+info: PC of packet = 473df0
+info: activate time = 11231510
+info: activate difference = 20000
+info: precharge time = 11266510
+info: nextReqEvent scheduled@11251510
+Exiting core 1 @ tick 11240000 because a thread reached the max instruction count
+Exiting @ tick 11240000 because a thread reached the max instruction count
