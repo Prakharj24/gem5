@@ -1,4 +1,5 @@
-build/X86/
+build/*
+configs/common/*.pyc
 m5out/
 *.pyc
 /run_bench.sh
