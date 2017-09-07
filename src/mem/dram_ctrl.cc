@@ -761,7 +761,7 @@ bool
 DRAMCtrl::chooseNext(std::deque<DRAMPacket*>& queue, bool switched_cmd_type)
 {   
     if(turn == 0)
-    // inform("CN: time = %d, turn = %d, subTurn =  %d, queue_size = %d", curTick(), turn, subTurn, queue.size());
+    inform("CN: time = %d, turn = %d, subTurn =  %d, queue_size = %d", curTick(), turn, subTurn, queue.size());
     // This method does the arbitration between requests. The chosen
     // packet is simply moved to the head of the queue. The other
     // methods know that this is the place to look. For example, with
@@ -774,9 +774,9 @@ DRAMCtrl::chooseNext(std::deque<DRAMPacket*>& queue, bool switched_cmd_type)
     if (queue.size() == 1) {
         DRAMPacket* dram_pkt = queue.front();
         // available rank corresponds to state refresh idle
-        // inform("queue size 1");
-        // if(turn == 0)
-        // inform("turn = %d, rankAvail = %d, inBankGroup = %d", dram_pkt->pkt->req->hasContextId()?dram_pkt->pkt->req->contextId():-1,ranks[dram_pkt->rank]->isAvailable()?1:-1, inBankGroup(dram_pkt)?1:-1);        
+        inform("queue size 1");
+        if(turn == 0)
+        inform("turn = %d, rankAvail = %d, inBankGroup = %d", dram_pkt->pkt->req->hasContextId()?dram_pkt->pkt->req->contextId():-1,ranks[dram_pkt->rank]->isAvailable()?1:-1, inBankGroup(dram_pkt)?1:-1);        
         if (ranks[dram_pkt->rank]->isAvailable() &&
                 dram_pkt->pkt->req->hasContextId() &&
                 dram_pkt->pkt->req->contextId() == turn &&
@@ -792,8 +792,8 @@ DRAMCtrl::chooseNext(std::deque<DRAMPacket*>& queue, bool switched_cmd_type)
 
         for(auto i = queue.begin(); i != queue.end() ; ++i) {
             DRAMPacket* dram_pkt = *i;
-            // if(turn == 0)
-            // inform("turn = %d, rankAvail = %d, inBankGroup = %d", dram_pkt->pkt->req->hasContextId()?dram_pkt->pkt->req->contextId():-1,ranks[dram_pkt->rank]->isAvailable()?1:-1, inBankGroup(dram_pkt)?1:-1);
+            if(turn == 0)
+            inform("turn = %d, rankAvail = %d, inBankGroup = %d", dram_pkt->pkt->req->hasContextId()?dram_pkt->pkt->req->contextId():-1,ranks[dram_pkt->rank]->isAvailable()?1:-1, inBankGroup(dram_pkt)?1:-1);
             if (ranks[dram_pkt->rank]->isAvailable() &&
                 dram_pkt->pkt->req->hasContextId() &&
                 (dram_pkt->pkt->req->contextId() == turn) &&
@@ -1100,12 +1100,12 @@ DRAMCtrl::doDRAMAccess(DRAMPacket* dram_pkt)
         // Record the activation and deal with all the global timing
         // constraints caused be a new activation (tRRD and tXAW)
         activateBank(rank, bank, act_tick, dram_pkt->row);
-        // if(turn == 0){
-        //     inform("activate time = %d", act_tick);
-        //     inform("activate difference = %d", act_tick - prev_act);
-        // }
-        // if(act_tick != curTick())
-        //     inform("..........................................activation not happening on time");
+        if(turn == 0){
+            inform("activate time = %d", act_tick);
+            inform("activate difference = %d", act_tick - prev_act);
+        }
+        if(act_tick != curTick())
+            inform("..........................................activation not happening on time");
         prev_act = act_tick;
         // issue the command as early as possible
         cmd_at = bank.colAllowedAt;
@@ -1166,8 +1166,7 @@ DRAMCtrl::doDRAMAccess(DRAMPacket* dram_pkt)
                                  dram_pkt->readyTime + tWR);
 
     prechargeBank(rank, bank, std::max(curTick(), bank.preAllowedAt));
-    // if(turn == 0)
-    // inform("precharge time = %d", std::max(curTick(), bank.preAllowedAt));
+
     // increment the bytes accessed and the accesses per row
     bank.bytesAccessed += burstSize;
     ++bank.rowAccesses;
@@ -1282,7 +1281,7 @@ void
 DRAMCtrl::processNextReqEvent()
 {
     epochStart = curTick();
-    // inform("nextReqEvent = %d", curTick());
+    inform("nextReqEvent = %d", curTick());
 
     int busyRanks = 0;
     for (auto r : ranks) {
@@ -1300,8 +1299,8 @@ DRAMCtrl::processNextReqEvent()
         // if all ranks are refreshing wait for them to finish
         // and stall this state machine without taking any further
         // action, and do not schedule a new nextReqEvent
-        // if(turn == 0)
-        // inform("all rank busy!");
+        if(turn == 0)
+        inform("all rank busy!");
         return;
     }
 
@@ -1355,8 +1354,8 @@ DRAMCtrl::processNextReqEvent()
 
                 // nothing to do, not even any point in scheduling an
                 // event for the next request
-                // if(turn == 0)
-                // inform("no request in the queues!");
+                if(turn == 0)
+                inform("no request in the queues!");
                 return;
             }
         } else {
@@ -1373,16 +1372,16 @@ DRAMCtrl::processNextReqEvent()
             // avoid adding more complexity to the code, return and wait
             // for a refresh event to kick things into action again.
             if (!found_read){
-                // if(turn == 0)
-                //     inform("no read request selected");
+                if(turn == 0)
+                    inform("no read request selected");
             if (!nextReqEvent.scheduled())
                 scheduleNext();
                 return;
             }
 
             DRAMPacket* dram_pkt = readQueue.front();
-            // if(turn == 0)
-            //     inform("PC of packet = %x",dram_pkt->pkt->req->getPC());
+            if(turn == 0)
+                inform("PC of packet = %x",dram_pkt->pkt->req->getPC());
             // inform("dram_pkt contextId = %d",  dram_pkt->pkt->req->hasContextId()?dram_pkt->pkt->req->contextId():-1);
             assert(dram_pkt->rankRef.isAvailable());
             // here we get a bit creative and shift the bus busy time not
@@ -1439,8 +1438,8 @@ DRAMCtrl::processNextReqEvent()
         // adding more complexity to the code, return at this point and wait
         // for a refresh event to kick things into action again.
         if (!found_write){
-            // if(turn == 0)
-            //     inform("no write request selected");
+            if(turn == 0)
+                inform("no write request selected");
             if (!nextReqEvent.scheduled())
                 scheduleNext();
             return;
@@ -1448,7 +1447,7 @@ DRAMCtrl::processNextReqEvent()
 
         DRAMPacket* dram_pkt = writeQueue.front();
         if(turn == 0)
-        // inform("PC of packet = %x",dram_pkt->pkt->req->getPC());
+        inform("PC of packet = %x",dram_pkt->pkt->req->getPC());
         // inform("dram_pkt contextId = %d",  dram_pkt->pkt->req->hasContextId()?dram_pkt->pkt->req->contextId():-1);
         assert(dram_pkt->rankRef.isAvailable());
         // sanity check
@@ -2344,7 +2343,7 @@ void
 DRAMCtrl::scheduleNext(){
     if(!nextReqEvent.scheduled())
     schedule(nextReqEvent, epochStart + RAS_period);
-    // inform("nextReqEvent scheduled@%d", epochStart + RAS_period );
+    inform("nextReqEvent scheduled@%d", epochStart + RAS_period );
 }
 
 /* Updates epochStart
@@ -2365,7 +2364,7 @@ DRAMCtrl::updateEpochStart(){
             else
                 subTurn = 0;
         }
-    // inform("ES: time = %d, turn = %d, subTurn = %d", curTick(), turn, subTurn);    
+    inform("ES: time = %d, turn = %d, subTurn = %d", curTick(), turn, subTurn);    
     }
 }
 
@@ -2373,7 +2372,6 @@ DRAMCtrl::updateEpochStart(){
 */
 bool
 DRAMCtrl::inBankGroup(DRAMPacket * dram_pkt){
-    return true;
     if(dram_pkt->pkt->req->hasContextId()){
         int core = dram_pkt->pkt->req->contextId();
         int bank = dram_pkt->bank;
@@ -2398,4 +2396,4 @@ DRAMCtrl::inBankGroup(DRAMPacket * dram_pkt){
             return false;
         }
     } else return false;
-}   
+}
