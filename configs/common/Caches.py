@@ -50,7 +50,7 @@ class L1Cache(BaseCache):
     assoc = 2
     hit_latency = 2
     response_latency = 2
-    mshrs = 4
+    mshrs = 8
     tgts_per_mshr = 20
     is_top_level = True
 
@@ -58,8 +58,17 @@ class L2Cache(BaseCache):
     assoc = 8
     hit_latency = 20
     response_latency = 20
-    mshrs = 20
-    tgts_per_mshr = 12
+    mshrs = 8
+    tgts_per_mshr = 20
+    write_buffers = 8
+
+
+class L3Cache(BaseCache):
+    assoc = 16
+    hit_latency = 30
+    response_latency = 30
+    mshrs = 16
+    tgts_per_mshr = 20
     write_buffers = 8
 
 class IOCache(BaseCache):

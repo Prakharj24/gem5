@@ -760,9 +760,17 @@ BaseCache::regStats()
         .name(name() +".no_allocate_misses")
         .desc("Number of misses that were no-allocate")
         ;
-//@Biswa add a vector for pf_hits
-// pf_hits
-//      .
+
+    //@Biswa add a vector for pf_hits
+    // pf_hits
+    pf_hits
+        .name(name() +".no_pf_hits")
+        .desc("Number of prefecher hits")
+        .flags(total | nozero | nonan)
+        ;
+    // for (int i = 0; i < 8; i++) {
+    //     pf_hits.subname(i, system->getMasterName(i));
+    // }        
 }
 
 unsigned int

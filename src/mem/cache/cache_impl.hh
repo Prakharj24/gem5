@@ -591,13 +591,14 @@ Cache<TagStore>::recvTimingReq(PacketPtr pkt)
 
     if (satisfied) {
         // hit (for all other request types)
-      //get core id 
+        //get core id
         if (prefetcher && (prefetchOnAccess || (blk && blk->wasPrefetched()))) {
-            if (blk)
+            if (blk){ //hit
                 blk->status &= ~BlkHWPrefetched;
-              //  pf_hits[core_id]++ populate this counter @Biswa
-            //  } 
-
+                //  pf_hits[core_id]++ populate this counter @Biswa
+                    pf_hits++;
+                    
+            }
             // Don't notify on SWPrefetch
             if (!pkt->cmd.isSWPrefetch())
                 next_pf_time = prefetcher->notify(pkt);

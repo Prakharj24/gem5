@@ -456,7 +456,9 @@ class BaseCache : public MemObject
     Stats::Vector soft_prefetch_mshr_full;
 
     Stats::Scalar mshr_no_allocate_misses;
-//@Biswa - Stats::Scalar pf_hits;
+
+    //@Biswa - Stats::Scalar pf_hits;
+    Stats::Scalar pf_hits;
     /**
      * @}
      */
