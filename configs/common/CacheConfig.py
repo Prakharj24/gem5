@@ -113,7 +113,7 @@ def config_cache(options, system):
 
 	#apply a prefetcher for l2 cache
 	#so for each cpu[i] this code makes an Icache, Dcache, l2cache and l2prefetcher
-            l2cache.prefetcher = SandboxPrefetcher()
+            l2cache.prefetcher = StreamPrefetcher()
 
             if options.memchecker:
                 dcache_mon = MemCheckerMonitor(warn_only=True)

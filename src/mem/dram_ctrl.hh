@@ -482,6 +482,7 @@ class DRAMCtrl : public AbstractMemory
     void processRespondEvent();
     EventWrapper<DRAMCtrl, &DRAMCtrl::processRespondEvent> respondEvent;
 
+
     /**
      * Check if the read queue has room for more entries
      *
@@ -852,6 +853,17 @@ class DRAMCtrl : public AbstractMemory
                          const Data::MemCommand& m2) {
         return m1.getTime() < m2.getTime();
     };
+
+    // variable initialised for BTA
+
+    Tick epochStart;
+    int turn, subTurn;
+    Tick prev_act; // to keep track of previous act tick.
+    const Tick RAS_period = 25000;
+    void scheduleNext();
+    bool inBankGroup(DRAMPacket * dram_pkt, int core);
+    void updateEpochStart();
+    EventWrapper<DRAMCtrl, &DRAMCtrl::updateEpochStart> updateEpoch;
 
 
   public:

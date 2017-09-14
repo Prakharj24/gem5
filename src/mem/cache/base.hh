@@ -459,6 +459,10 @@ class BaseCache : public MemObject
 
     //@Biswa - Stats::Scalar pf_hits;
     Stats::Scalar pf_hits;
+    Stats::Scalar pf_issued;
+    Stats::Formula pf_accuracy;
+    Stats::Formula pf_coverage;
+	
     /**
      * @}
      */

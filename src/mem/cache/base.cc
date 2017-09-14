@@ -768,6 +768,24 @@ BaseCache::regStats()
         .desc("Number of prefecher hits")
         .flags(total | nozero | nonan)
         ;
+    pf_issued
+        .name(name() +".no_pf_issued")
+        .desc("Number of prefecher hits")
+        .flags(total | nozero | nonan)
+        ;
+    pf_accuracy
+        .name(name() +".no_pf_accuracy")
+        .desc("Number of prefecher hits")
+        .flags(total | nozero | nonan)
+        ;
+pf_accuracy = pf_hits / pf_issued;
+
+    pf_coverage
+        .name(name() +".no_pf_coverage")
+        .desc("Number of prefecher hits")
+        .flags(total | nozero | nonan)
+        ;
+   pf_coverage = pf_hits /(  demandMisses + pf_hits);
     // for (int i = 0; i < 8; i++) {
     //     pf_hits.subname(i, system->getMasterName(i));
     // }        

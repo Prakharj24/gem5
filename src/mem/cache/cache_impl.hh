@@ -1951,6 +1951,7 @@ Cache<TagStore>::getNextMSHR()
                 !mshrQueue.findMatch(pf_addr, pkt->isSecure()) &&
                 !writeBuffer.findMatch(pf_addr, pkt->isSecure())) {
                 // Update statistic on number of prefetches issued
+		pf_issued++;
                 // (hwpf_mshr_misses)
                 assert(pkt->req->masterId() < system->maxMasters());
                 mshr_misses[pkt->cmdToIndex()][pkt->req->masterId()]++;
