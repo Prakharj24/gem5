@@ -2,6 +2,7 @@ build/*
 configs/common/*.pyc
 m5out/
 *.pyc
+*.sh
 /run_bench.sh
 m5out/config.ini
 m5out/config.json
