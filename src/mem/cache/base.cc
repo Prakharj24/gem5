@@ -785,10 +785,7 @@ pf_accuracy = pf_hits / pf_issued;
         .desc("Number of prefecher hits")
         .flags(total | nozero | nonan)
         ;
-   pf_coverage = pf_hits /(  demandMisses + pf_hits);
-    // for (int i = 0; i < 8; i++) {
-    //     pf_hits.subname(i, system->getMasterName(i));
-    // }        
+   pf_coverage = pf_hits /( demandMisses + pf_hits);
 }
 
 unsigned int
